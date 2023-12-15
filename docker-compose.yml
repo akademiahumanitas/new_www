@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8.2
+    volumes:
+      - db:/var/lib/mysql
+    restart: always
+    ports:
+      - 3306:3306
+    env_file:
+      - .env
+
+  wp:
+    image: wordpress:6.4
+    depends_on:
+      - db
+    volumes:
+      - ./wp/wp-content:/var/www/html/wp-content
+    ports:
+      - 80:80
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: ${MYSQL_DATABASE:?error}
+      WORDPRESS_DB_USER: ${MYSQL_USER:?error}
+      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD:?error}
+
+volumes:
+  db:

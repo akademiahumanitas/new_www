@@ -1,0 +1,20 @@
+// stylelint-disable rem-over-px/rem-over-px
+// Layout widths
+$width-max-layout: 100%;
+$width-max-article: 800px;
+$width-grid-base: 1440px;
+$width-max-mobile: 1030px;
+
+// Breakpoints for containers
+$container-ipad: 770px;
+$container-ipad-landscape: 1024px;
+$container-mobile: 600px;
+
+// Gutenberg widths
+$width-wide: 1200px;
+$width-full: 100%;
+
+// CSS variables for JS
+:root {
+  --width-max-mobile: #{$width-max-mobile};
+}

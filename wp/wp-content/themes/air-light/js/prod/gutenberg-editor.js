@@ -1,0 +1,1 @@
+wp.blocks.registerBlockStyle("core/paragraph",{name:"boxed",label:"Laatikko"}),window.addEventListener("load",(function(){window.acf&&window.acf.addAction("render_block_preview",(function(e){}))}));
