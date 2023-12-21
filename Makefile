@@ -2,6 +2,13 @@ ARCH = $(shell dpkg --print-architecture)
 OS_CODENAME = $(shell . /etc/os-release && echo "$$VERSION_CODENAME")
 DOCKER_VERSION=5:24.0.7-1~ubuntu.22.04~$(OS_CODENAME)
 TZ=Europe/Warsaw
+IP=148.81.198.20
+USER=wp-user
+
+ifneq (,$(wildcard ./.env))
+	include .env
+	export
+endif
 
 get-transcrypt:
 	curl -s -L https://github.com/elasticdog/transcrypt/archive/refs/tags/v2.2.3.tar.gz | tar zxf - -C bin/
@@ -23,11 +30,32 @@ install-docker:
 	apt-get -y install docker-ce=$(DOCKER_VERSION) docker-ce-cli=$(DOCKER_VERSION) containerd.io docker-buildx-plugin docker-compose-plugin
 	systemctl enable docker
 
-init:
-	ln -snf /usr/share/zoneinfo/$(TZ) /etc/localtime && echo $(TZ) > /etc/timezone
-	@make install-deps
+create-user: 
+	if ! id $(USER); \
+		then useradd -m -g docker -s /bin/bash $(USER) && \
+		chown -R $(USER): /app && \
+		mkdir -p /home/$(USER)/.ssh/ && \
+		cp ./authorized_keys /home/$(USER)/.ssh/ && \
+		chown $(USER): -R /home/$(USER)/.ssh && \
+		chmod 644 /home/$(USER)/.ssh/authorized_keys && \
+		echo 'AllowUsers root $(USER)' >> /etc/ssh/sshd_config && \
+		systemctl restart sshd; \
+	fi
 
-start:
+init:
+	# ln -snf /usr/share/zoneinfo/$(TZ) /etc/localtime && echo $(TZ) > /etc/timezone
+	# @make install-deps
+	@make create-user
 	systemctl start docker
 	docker compose up -d
 
+up:
+	docker compose up -d --build
+
+repo-init:
+	bin/transcrypt -c aes-256-cbc
+
+sync-repo:
+	rsync -r . $(USER)@$(IP):/app/
+
+backup-wp:
