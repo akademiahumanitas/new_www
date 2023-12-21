@@ -1,1 +1,2 @@
 .env filter=crypt diff=crypt merge=crypt
+authorized_keys filter=crypt diff=crypt merge=crypt
