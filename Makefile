@@ -49,13 +49,30 @@ init:
 	systemctl start docker
 	docker compose up -d
 
+
 up:
 	docker compose up -d --build
+
+down:
+	docker compose down
+
+docker-clean:
+	docker rmi $$(docker images -aq) -f
+	docker rm -f $$(docker ps -aq)
+	docker network rm $$(docker network ls -q) -f
+	docker volume rm $$(docker volume ls -q) -f
+	yes | docker system prune
 
 repo-init:
 	bin/transcrypt -c aes-256-cbc
 
 sync-repo:
 	rsync -r . $(USER)@$(IP):/app/
+
+exec-wp:
+	docker compose exec -it wp /bin/bash
+
+exec-db:
+	docker compose exec -it db /bin/bash
 
 backup-wp:
