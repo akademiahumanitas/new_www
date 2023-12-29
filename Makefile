@@ -68,11 +68,15 @@ repo-init:
 
 sync-repo:
 	rsync -r . $(USER)@$(IP):/app/
+	ssh $(USER)@$(IP) 'cd /app && make up'
 
 exec-wp:
 	docker compose exec -it wp /bin/bash
 
 exec-db:
 	docker compose exec -it db /bin/bash
+
+tunnel-db:
+	ssh -NL localhost:3306:localhost:3306 wp-user@148.81.198.20
 
 backup-wp:

@@ -20,7 +20,12 @@
 
 ### Manual Server Deploy
 - Manually update db with required changes
-- Upload local code onto destination machine (IP can change with time)
+- Upload local code onto destination machine (IP can change with time) and restart containers using command
     ```
     make sync-repo
+    ```
+
+### You can tunnel connection to remote database over ssh using following command
+    ```
+    make tunnel-db
     ```
