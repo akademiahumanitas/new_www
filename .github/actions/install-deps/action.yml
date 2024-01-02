@@ -1,9 +1,0 @@
-name: Awscli-Install
-description: 'Installs aws cli binary'
-runs:
-  using: 'composite'
-  steps:
-    - run: apt-get update
-      shell: bash
-    - run: apt-get -y install rsync
-      shell: bash
