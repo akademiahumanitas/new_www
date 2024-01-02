@@ -3,7 +3,7 @@ services:
     image: mariadb:11.2.2
     volumes:
       - db:/var/lib/mysql
-    restart: always
+    restart: unless-stopped
     ports:
       - 3306:3306
     environment:
@@ -15,19 +15,30 @@ services:
       - wp
 
   wp:
-    image: wordpress:6.4
+    image: wordpress:6.4.2-php8.1-fpm-alpine
     depends_on:
       - db
     volumes:
       - ./wp/wp-content:/var/www/html/wp-content
-    ports:
-      - 80:80
-    restart: always
+    restart: unless-stopped
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_NAME: ${DB_DATABASE:?error}
       WORDPRESS_DB_USER: ${DB_USER:?error}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD:?error}
+    networks:
+      - wp
+
+  nginx:
+    image: nginx:1.25.3-alpine
+    depends_on:
+      - wp
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes:
+      - ./wp/wp-content:/var/www/html
+      - ./nginx-conf:/etc/nginx/conf.d
     networks:
       - wp
 

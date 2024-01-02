@@ -57,8 +57,8 @@ down:
 	docker compose down
 
 docker-clean:
-	docker rmi $$(docker images -aq) -f
 	docker rm -f $$(docker ps -aq)
+	docker rmi $$(docker images -aq) -f
 	docker network rm $$(docker network ls -q) -f
 	docker volume rm $$(docker volume ls -q) -f
 	yes | docker system prune
