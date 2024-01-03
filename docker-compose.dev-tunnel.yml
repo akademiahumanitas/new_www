@@ -1,0 +1,8 @@
+services:
+  wp:
+    image: wordpress:6.4.2
+    depends_on: !reset []
+    ports:
+      - 80:80
+    extra_hosts:
+      - db:host-gateway

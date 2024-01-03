@@ -1,0 +1,5 @@
+services:
+  wp:
+    image: wordpress:6.4.2
+    ports:
+      - 80:80

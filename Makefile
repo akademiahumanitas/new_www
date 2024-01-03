@@ -50,6 +50,12 @@ init:
 	docker compose up -d
 
 
+dev-up:
+	docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build wp
+
+dev-tunnel-up:
+	docker compose -f docker-compose.yml -f docker-compose.dev-tunnel.yml up -d --build wp
+
 up:
 	docker compose up -d --build
 
@@ -76,7 +82,10 @@ exec-wp:
 exec-db:
 	docker compose exec -it db /bin/bash
 
+exec-nginx:
+	docker compose exec -it nginx /bin/sh
+
 tunnel-db:
-	ssh -NL localhost:3306:localhost:3306 wp-user@148.81.198.20
+	ssh -NL 0.0.0.0:3306:localhost:3306 wp-user@148.81.198.20
 
 backup-wp:

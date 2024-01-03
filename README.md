@@ -29,3 +29,10 @@
     ```
     make tunnel-db
     ```
+
+### Start wp locally with or without tunneled db (choose 1 command)
+    ```
+    make dev-up
+    make dev-tunnel-up
+    ```
+
