@@ -1,8 +1,11 @@
 services:
   wp:
     image: wordpress:6.4.2
+    build: !reset null
     depends_on: !reset []
     ports:
       - 80:80
     extra_hosts:
       - db:host-gateway
+    volumes:
+      - ./wp-content:/var/www/html/wp-content:ro

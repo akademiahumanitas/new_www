@@ -1,5 +1,8 @@
 services:
   wp:
     image: wordpress:6.4.2
+    build: !reset null
     ports:
       - 80:80
+    volumes:
+      - ./wp-content:/var/www/html/wp-content:ro

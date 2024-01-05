@@ -15,11 +15,11 @@ services:
       - wp
 
   wp:
-    image: wordpress:6.4.2-php8.1-fpm-alpine
+    build: .
     depends_on:
       - db
     volumes:
-      - ./wp/wp-content:/var/www/html/wp-content
+      - wp:/var/www/html
     restart: unless-stopped
     environment:
       WORDPRESS_DB_HOST: db:3306
@@ -37,13 +37,14 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./wp/wp-content:/var/www/html
-      - ./nginx-conf:/etc/nginx/conf.d
+      - wp:/var/www/html
+      - ./nginx-conf:/etc/nginx/conf.d:ro
     networks:
       - wp
 
 volumes:
   db:
+  wp:
 
 networks:
   wp:

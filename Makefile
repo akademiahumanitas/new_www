@@ -63,7 +63,6 @@ down:
 	docker compose down
 
 docker-clean:
-	docker rm -f $$(docker ps -aq)
 	docker rmi $$(docker images -aq) -f
 	docker network rm $$(docker network ls -q) -f
 	docker volume rm $$(docker volume ls -q) -f
