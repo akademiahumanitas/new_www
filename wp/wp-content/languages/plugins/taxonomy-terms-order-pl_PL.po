@@ -1,0 +1,145 @@
+# Translation of Plugins - Category Order and Taxonomy Terms Order - Stable (latest release) in Polish
+# This file is distributed under the same license as the Plugins - Category Order and Taxonomy Terms Order - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-07-28 06:06:57+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"X-Generator: GlotPress/4.0.0-alpha.11\n"
+"Language: pl\n"
+"Project-Id-Version: Plugins - Category Order and Taxonomy Terms Order - Stable (latest release)\n"
+
+#. Description of the plugin
+msgid "Order Categories and all custom taxonomies terms (hierarchically) and child terms using a Drag and Drop Sortable javascript capability."
+msgstr "Ustawianie kolejności kategorii i własnych terminów taksonomii (hierarchicznych) i dzieci za pomocą funkcji sortowania JavaScript typu podnieś i upuść."
+
+#. Author of the plugin
+msgid "Nsp-Code"
+msgstr "Nsp-Code"
+
+#. Plugin URI of the plugin
+msgid "http://www.nsp-code.com"
+msgstr "http://www.nsp-code.com"
+
+#. Plugin Name of the plugin
+msgid "Category Order and Taxonomy Terms Order"
+msgstr "Category Order and Taxonomy Terms Order"
+
+#: taxonomy-terms-order.php:110
+msgid "Taxonomy Terms Order"
+msgstr "Kolejność elementów w taksonomii"
+
+#: include/options.php:79
+msgid "Save Settings"
+msgstr "Zapisz ustawienia"
+
+#: include/options.php:68
+msgid "This will change the order of terms within the admin interface"
+msgstr "Spowoduje to zmianę kolejności elementów taksonomii w interfejsie administratora"
+
+#: include/options.php:62
+msgid "Admin Sort"
+msgstr "Sortowanie w panelu administratora"
+
+#: include/options.php:57 include/options.php:68
+msgid "Auto Sort Description"
+msgstr "Opis automatycznej kolejności"
+
+#: include/options.php:57 include/options.php:68
+msgid "Additional description and details at "
+msgstr "Dodatkowy opis i szczegóły na"
+
+#: include/options.php:57
+msgid "global setting"
+msgstr "ustawienia ogólne"
+
+#: include/options.php:55 include/options.php:66
+msgid "ON"
+msgstr "o"
+
+#: include/options.php:51
+msgid "Auto Sort"
+msgstr "Automatyczne sortowanie"
+
+#: include/options.php:54 include/options.php:65
+msgid "OFF"
+msgstr "Wyłącz"
+
+#: include/options.php:43
+msgid "Administrator"
+msgstr "Administrator"
+
+#: include/options.php:42
+msgid "Editor"
+msgstr "Redaktor"
+
+#: include/options.php:41
+msgid "Author"
+msgstr "Autor"
+
+#: include/options.php:39
+msgid "Subscriber"
+msgstr "Subskrybent"
+
+#: include/options.php:36
+msgid "Minimum Level to use this plugin"
+msgstr "Minimalny poziom uprawnień, aby móc korzystać z wtyczki"
+
+#: include/options.php:40
+msgid "Contributor"
+msgstr "Współtwórca"
+
+#: include/options.php:31
+msgid "General"
+msgstr "Ogólne"
+
+#: include/options.php:25
+msgid "General Settings"
+msgstr "Ustawienia ogólne"
+
+#: include/interface.php:205
+msgid "Items Order Updated"
+msgstr "Kolejność elementów została zapisana"
+
+#: include/options.php:17
+msgid "Settings Saved"
+msgstr "Ustawienia zostały zapisane"
+
+#: include/interface.php:104
+msgid "Taxonomies"
+msgstr "Taksonomie"
+
+#: include/interface.php:160
+msgid "Update"
+msgstr "Aktualizuj"
+
+#: include/interface.php:42 taxonomy-terms-order.php:147
+#: taxonomy-terms-order.php:149 taxonomy-terms-order.php:151
+msgid "Taxonomy Order"
+msgstr "Kolejność elementów taksonomii"
+
+#: include/interface.php:108
+msgid "Taxonomy Title"
+msgstr "Nazwa taksonomii"
+
+#: include/interface.php:108
+msgid "Total Posts"
+msgstr "Liczba wpisów"
+
+#: include/functions.php:76 include/functions.php:77
+msgid "Check our"
+msgstr "Sprawdź też"
+
+#: include/interface.php:50
+msgid "This plugin can't work without javascript, because it's use drag and drop and AJAX."
+msgstr "Wtyczka nie jest w stanie pracować bez javascriptu, ponieważ używa go do ustawiania kolejności i zapisywania."
+
+#: include/functions.php:74
+msgid "Did you find this plugin useful? Please support our work with a donation or write an article about this plugin in your blog with a link to our site"
+msgstr "Czy wtyczka jest przydatna? Wesprzyj naszą pracę darowizną lub napisz o niej artykuł na swoim blogu z linkiem do naszej witryny"
+
+#: include/functions.php:75
+msgid "Read more"
+msgstr "Dowiedz się więcej"

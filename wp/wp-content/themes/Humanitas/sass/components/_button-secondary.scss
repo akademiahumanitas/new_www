@@ -1,0 +1,18 @@
+@mixin button-secondary() { 
+    background-color: var(--color-white);
+    border-color: var(--color-primary-light);
+    color: var(--color-primary);
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-primary);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: var(--color-white);
+
+      .button__icon {
+        svg path {
+          fill: var(--color-white);
+        }
+      }
+    }
+}

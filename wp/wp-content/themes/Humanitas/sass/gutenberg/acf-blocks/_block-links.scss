@@ -1,0 +1,51 @@
+.block-links {
+    margin-block: 12.8rem;
+    background-color: var(--color-background-3);
+    padding: 4.8rem 0;
+
+
+    &__title {
+        position: relative;
+        margin: 0;
+        margin-bottom: 2.4rem;
+        color: var(--color-text-secondary);
+        font-size: var(--font-size-24);
+
+        span {
+            background-color: var(--color-background-3);
+
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            padding-right: 1.6rem;
+        }
+
+        &:after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0.4rem;
+            background-color: var(--color-yellow);
+            content: '';
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.6rem;
+    }
+
+    &__button {
+        .button__icon {
+            display: none;
+        }
+
+        &:hover {
+            .button__icon {
+                display: block;
+            }
+        }
+    }
+}

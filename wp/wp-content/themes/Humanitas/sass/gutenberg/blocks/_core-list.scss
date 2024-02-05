@@ -1,0 +1,60 @@
+// Default list block
+ul:not([class]),
+ul.block-editor-block-list__block,
+.list-styles,
+ol:not([class]),
+ol.block-editor-block-list__block,
+.list-styles {
+  list-style-position: outside;
+  width: calc((100% - calc(var(--padding-container-horizontal) * 2)));
+  margin-top: 0;
+  margin-bottom: 3.2rem;
+
+  // Colorized markers
+  li::marker {
+    color: var(--color-primary);
+    // Reseting the font in numbering magically removes the gap
+    font-family: system-ui, sans-serif;
+    font-size: inherit;
+  }
+}
+.list-styles {
+  width: 100%;
+}
+ul:not([class]),
+ul.block-editor-block-list__block,
+.list-styles {
+  // list-style-type: '\2022  ';
+  padding-inline-start: 1.2em;
+}
+
+ol:not([class]),
+ol.block-editor-block-list__block,
+.list-styles {
+  padding-inline-start: 1.25em;
+}
+
+ul:not([class]),
+ul.block-editor-block-list__block,
+.list-styles {
+  list-style: none;
+  padding-left: 1.2rem;
+
+  li {
+    position: relative;
+    margin-bottom: 0.8rem;
+
+    &::before {
+      position: absolute;
+      top: 1rem;
+      left: -1.2rem;
+      content: '';
+      width: 0.4rem;
+      height: 0.4rem;
+      background-color: var(--color-yellow);
+      // Reseting the font in numbering magically removes the gap
+      font-family: system-ui, sans-serif;
+      font-size: inherit;
+    }
+  }
+}

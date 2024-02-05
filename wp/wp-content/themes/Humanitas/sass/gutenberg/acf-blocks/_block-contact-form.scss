@@ -1,0 +1,36 @@
+.block-contact-form {
+    margin-block: 12.8rem;
+    
+    &__wrapper {
+        display: flex;
+        gap: 3.2rem;
+        justify-content: space-between;
+    }
+
+    &__left {
+        flex: 1;
+        max-width: 58.7rem;
+    }
+
+    &__content {
+        font-weight: var(--font-weight-medium);
+    }
+
+    &__right {
+        flex: 1 0 40%;
+        max-width: 40%;
+    }
+
+    &__image {
+        height: 100%;
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 0.4rem;
+        }
+    }
+}

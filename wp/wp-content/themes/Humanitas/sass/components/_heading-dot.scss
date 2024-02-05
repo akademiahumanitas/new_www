@@ -1,0 +1,29 @@
+.heading-dot,
+.text-dot {
+    display: inline-block;
+
+    &::after {
+        background: var(--color-yellow);
+        border-radius: 0.8rem;
+        content: '';
+        display: inline-block;
+        height: 0.8rem;
+        margin-left: 4px;
+        width: 0.8rem;
+    }
+
+    &--big {
+        &::after {
+            height: 1.2rem;
+            width: 1.2rem;
+        }
+    }
+
+    &--small {
+        &::after {
+            height: 0.4rem;
+            width: 0.4rem;
+            margin-left: 0;
+        }
+    }
+}

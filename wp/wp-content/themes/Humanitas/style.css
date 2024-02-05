@@ -1,0 +1,43 @@
+/*!
+Theme Name: Humanitas
+Author: Boldare
+Author URI: https://www.boldare.com/
+Description: A custom theme build for Humanitas
+Version: 1.0.0
+
+------8<----------
+Please do this before your actual theme is ready to go live:
+
+1. Cut everything between "------8<----------" including the separator
+2. Theme Name should be already replaced, but double check it
+3. Edit Theme URI, Author, Author URI, Description
+4. Add Version as 1.0.0.
+
+This metadata and guide should not be visible in production.
+If you see this, contact the site admin.
+
+/*---------------------------------------------------------------
+>>> Humanitas theme version information, only for AIR developers
+-----------------------------------------------------------------
+@version 2023-09-12
+@since 2016-01-28
+
+Tested up to: 6.3.1
+Requires PHP: 7.4
+License: MIT License
+License URI: LICENSE
+Text Domain: humanitas
+Tags: one-column, accessibility-ready, translation-ready
+This theme is licensed under MIT.
+Use it to make something cool, have fun, and share what you've learned.
+Humanitas is based on Underscores https://underscores.me/ C) 2016-2022 Digitoimisto Dude Oy
+_s is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+
+Last implemented _s commit: 7226368 (May 15, 2020)
+Last checked _s commit: e78a808 (May 16, 2020)
+@link https://github.com/Automattic/_s/commits/master
+------8<----------
+*/

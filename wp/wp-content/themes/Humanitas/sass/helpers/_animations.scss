@@ -1,0 +1,60 @@
+// Mixins
+@mixin cubic-bezier($property: color, $duration: .18s) {
+  transition: $property $duration cubic-bezier(.19, 1, .22, 1);
+}
+
+// Possible keyframes here
+// @keyframes
+
+// fade in animation with a little moving up keyframes
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    // transform: translateX(2rem);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+body:not(.wp-admin) .fade-in {
+  opacity: 0;
+  transform: translateY(2rem);
+  
+  &.animate {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-name: fadeInUp;
+  }
+}
+
+body:not(.wp-admin) {
+  .animate .js-delay-item {
+    animation-duration: 0.3s;
+    animation-fill-mode: backwards;
+    animation-name: fadeInLeft;
+
+  }
+}

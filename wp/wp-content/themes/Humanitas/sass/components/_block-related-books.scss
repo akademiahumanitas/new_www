@@ -1,0 +1,41 @@
+.block-related-books {
+    margin-block: 12.8rem;
+
+    &__title {
+        margin: 0;
+    }
+
+    &__header {
+        align-items: center;
+        gap: 48px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4rem;
+    }
+    
+    &__slider {
+        margin: 0 -1.2rem;
+        
+    }
+
+    &__slide {
+        padding: 0 1.2rem;
+    }
+
+    .slick-track {
+        display: flex !important;
+        padding: 0.8rem 0;
+    }
+
+    .slick-slide {
+        height: auto;
+
+        & > div {
+            height:100%;
+        }
+    }
+
+    .slick-arrow {
+        top: 38%;
+    }
+}

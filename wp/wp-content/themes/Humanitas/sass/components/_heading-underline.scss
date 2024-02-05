@@ -1,0 +1,14 @@
+.heading-underline {
+    border-bottom: 4px solid currentColor;
+    display: inline-block;
+
+    &::after {
+        background: var(--color-yellow);
+        border-radius: 0.8rem;
+        content: '';
+        display: inline-block;
+        height: 0.8rem;
+        margin-left: 4px;
+        width: 0.8rem;
+    }
+}
