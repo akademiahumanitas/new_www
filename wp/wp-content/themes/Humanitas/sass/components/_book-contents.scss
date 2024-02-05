@@ -1,11 +1,25 @@
 .book-contents {
+    padding-bottom: 12.8rem;
+
+    @include md {
+        padding-bottom: 4.8rem;
+    }
+
     &__wrapper {
         display: flex;
         gap: 3.2rem;
+
+        @include md {
+            flex-direction: column;
+        }
     }
 
     &__sidebar {
         max-width: 42.8rem;
+
+        @include md {
+            max-width: 100%;
+        }
     }
 
     &__content {

@@ -25,7 +25,7 @@ $books = $books->get_posts();
 <section class="block-related-books block-related-books--<?= $version;?> fade-in" id="<?= $block_ID; ?>">
     <div class="container">
         <div class="block-related-books__header">
-            <h2 class="block-related-books__title heading-underline fade-in"><?= $title; ?></h2>
+            <h2 class="block-related-books__title <?php echo $more_books ? 'heading-underline' : '';?> fade-in"><?= $title; ?></h2>
             <?php if($more_books) : ?>
                 <?php get_theme_part('elements/more-link', array('link' => array('url' => get_post_type_archive_link('books'), 'title' => __('Zobacz wszystkie', 'humanitas')))); ?>
             <?php endif; ?>
