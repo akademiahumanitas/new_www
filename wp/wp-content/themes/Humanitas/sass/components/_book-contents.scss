@@ -1,0 +1,14 @@
+.book-contents {
+    &__wrapper {
+        display: flex;
+        gap: 3.2rem;
+    }
+
+    &__sidebar {
+        max-width: 42.8rem;
+    }
+
+    &__content {
+        flex: 1;
+    }
+}

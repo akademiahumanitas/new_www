@@ -1,0 +1,18 @@
+{
+  "cSpell.words": ["variablefont"],
+  "intelephense.phpdoc.functionTemplate": {
+    "summary": "$1",
+    "tags": [
+      "@param ${1:$SYMBOL_TYPE} $SYMBOL_NAME $2",
+      "@return ${1:$SYMBOL_TYPE} $2",
+      "@throws ${1:$SYMBOL_TYPE} $2"
+    ]
+  },
+  "intelephense.stubs": ["standard", "wordpress"],
+  "intelephense.environment.phpVersion": "7.4.33",
+  "intelephense.files.associations": ["*.php", "*.phtml"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "explicit"
+  },
+  "stylelint.enable": true
+}

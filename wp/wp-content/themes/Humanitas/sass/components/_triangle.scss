@@ -1,0 +1,20 @@
+.triangle {
+    aspect-ratio: 14.69;
+    position: relative;
+    z-index: 1;
+
+    &:first-child {
+        bottom: 1px;
+    }
+    
+    &:last-child {
+        top: 1px;
+    }
+    
+    svg {
+        display: block;
+        height: auto;
+        object-fit: cover;
+        width: 100%;
+    }
+}

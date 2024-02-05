@@ -1,0 +1,5 @@
+@mixin button-color($background: var(--color-yellow), $color: var(--color-primary)) {
+    background-color: $background;
+    border-color: $background;
+    color: $color;
+}

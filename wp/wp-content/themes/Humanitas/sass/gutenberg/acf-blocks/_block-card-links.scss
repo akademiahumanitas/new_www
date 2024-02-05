@@ -1,0 +1,9 @@
+.block-card-links {
+    margin-block: 12.8rem;
+    
+    &__links {
+        display: grid;
+        gap: 1.6rem;
+        grid-template-columns: repeat(5, 1fr);
+    }
+}

@@ -1,0 +1,164 @@
+// stylelint-disable rem-over-px/rem-over-px
+// CSS Variables for responsive fonts
+:root {
+
+  // Heading font sizes in mobile
+  @media (max-width: $container-mobile) {
+    --font-size-hero: 24px;
+    --font-size-h1: 32px;
+    --font-size-h2: 24px;
+    --font-size-h3: 21px;
+    --font-size-h4: 18px;
+    --font-size-h5: 14px;
+    --font-size-h6: 12px;
+    --font-size-paragraph: 16px;
+    --font-size-24: 20px;
+  }
+
+  // Element font sizes in tiny phones like iPhone 5S
+  @media (max-width: 420px) {
+    --font-size-16: 14px;
+    --font-size-nav-toggle-label: 13px;
+
+    --font-size-24: 18px;
+  }
+  // Heading font sizes
+  --font-size-hero: 48px;
+  --font-size-h1: 40px;
+  --font-size-h2: 40px;
+  --font-size-h3: 2.8rem;
+  --font-size-h4: 20px;
+  --font-size-h5: 16px;
+  --font-size-h6: 14px;
+
+  // Paragraph font sizes
+  --font-size-12: 12px;
+  --font-size-13: 13px;
+  --font-size-14: 14px;
+  --font-size-15: 15px;
+  --font-size-16: 16px;
+  --font-size-17: 17px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-22: 22px;
+  --font-size-24: 24px;
+
+  // Element font sizes
+  --font-size-paragraph: var(--font-size-16);
+  --font-size-nav-toggle-label: 15px;
+  --font-size-captions: 15px;
+
+  // Line-heights
+  --line-height-heading: 1.5;
+  --line-height-core-heading: 1.23;
+  --line-height-paragraph: 1.5;
+
+  // Font weights
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-paragraph: var(--font-weight-regular);
+  --font-weight-heading: var(--font-weight-bold);
+
+  // Heading font sizes in mobile
+  @include lg {
+    --font-size-hero: 32px;
+    --font-size-h1: 32px;
+    --font-size-h2: 24px;
+    --font-size-h3: 21px;
+    --font-size-h4: 18px;
+    --font-size-h5: 14px;
+    --font-size-h6: 12px;
+    --font-size-paragraph: 16px;
+  }
+
+  @include md {
+    --font-size-hero: 28px;
+    --font-size-h1: 32px;
+    --font-size-h2: 24px;
+    --font-size-h3: 21px;
+    --font-size-h4: 18px;
+    --font-size-h5: 14px;
+    --font-size-h6: 12px;
+    --font-size-paragraph: 16px;
+  }
+}
+
+.font-size {
+  &-big {
+    @media (max-width: $container-mobile) {
+      --font-size-hero: 34px;
+      --font-size-h1: 36px;
+      --font-size-h2: 30px;
+      --font-size-h3: 25px;
+      --font-size-h4: 22px;
+      --font-size-h5: 18px;
+      --font-size-h6: 16px;
+      --font-size-paragraph: 20px;
+    }
+
+    // Element font sizes in tiny phones like iPhone 5S
+    @media (max-width: 420px) {
+      --font-size-16: 18px;
+      --font-size-nav-toggle-label: 17px;
+    }
+    // Heading font sizes
+    --font-size-hero: 52px;
+    --font-size-h1: 44px;
+    --font-size-h2: 44px;
+    --font-size-h3: 28px;
+    --font-size-h4: 24px;
+    --font-size-h5: 20px;
+    --font-size-h6: 18px;
+
+    // Paragraph font sizes
+    --font-size-12: 16px;
+    --font-size-13: 17px;
+    --font-size-14: 18px;
+    --font-size-15: 19px;
+    --font-size-16: 20px;
+    --font-size-17: 21px;
+    --font-size-18: 22px;
+    --font-size-20: 24px;
+    --font-size-22: 26px;
+  }
+
+  &-bigger {
+    @media (max-width: $container-mobile) {
+      --font-size-hero: 42px;
+      --font-size-h1: 40px;
+      --font-size-h2: 34px;
+      --font-size-h3: 29px;
+      --font-size-h4: 26px;
+      --font-size-h5: 22px;
+      --font-size-h6: 20px;
+      --font-size-paragraph: 24px;
+    }
+
+    // Element font sizes in tiny phones like iPhone 5S
+    @media (max-width: 420px) {
+      --font-size-16: 22px;
+      --font-size-nav-toggle-label: 21px;
+    }
+    // Heading font sizes
+    --font-size-hero: 60px;
+    --font-size-h1: 48px;
+    --font-size-h2: 48px;
+    --font-size-h3: 32px;
+    --font-size-h4: 28px;
+    --font-size-h5: 24px;
+    --font-size-h6: 22px;
+
+    // Paragraph font sizes
+    --font-size-12: 20px;
+    --font-size-13: 21px;
+    --font-size-14: 22px;
+    --font-size-15: 23px;
+    --font-size-16: 24px;
+    --font-size-17: 25px;
+    --font-size-18: 26px;
+    --font-size-20: 30px;
+    --font-size-22: 32px;
+  }
+}

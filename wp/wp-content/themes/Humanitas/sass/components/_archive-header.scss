@@ -1,0 +1,22 @@
+.archive-header {
+    background-color: var(--color-primary);
+    margin-bottom: 4.8rem;
+
+    &:has( + .secondary-menu) {
+        margin-bottom: 0;
+    }
+
+    .container {
+        padding-top: 4.8rem;
+        padding-bottom: 4.8rem;
+    }
+
+    &__title {
+        color: var(--color-white);
+        margin-bottom: 0;
+    }
+
+    .triangle {
+        margin-top: -5rem;
+    }
+}
