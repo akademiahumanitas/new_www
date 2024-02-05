@@ -1,6 +1,18 @@
 .block-related-books {
     margin-block: 12.8rem;
 
+    .container & {
+        margin-block: 0;
+
+        .block-related-books__title {
+            font-size: var(--font-size-20);
+        }
+
+        .container {
+            padding: 0;
+        }
+    }
+
     &__title {
         margin: 0;
     }
