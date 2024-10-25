@@ -12,9 +12,9 @@
 ### Initial Local Setup
 - All secrets are stored encrypted in this repo and they will be automatically decrypted when you checkout changes and encrypted when you commit them.
     All you need is to get the encryption passphrase, you can find it in our bldr bitwarden under name `[Humanitas] Transcrypt passphrase`.
-    Once you have it, just run 
+    Once you have it, just run from root of the project
     ```
-    make repo-init
+	./bin/transcrypt -c aes-256-cbc
     ```
     When asked, paste passphrase you got from bitwarden. 
 

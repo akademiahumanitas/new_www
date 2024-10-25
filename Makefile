@@ -68,9 +68,6 @@ docker-clean:
 	docker volume rm $$(docker volume ls -q) -f
 	yes | docker system prune
 
-repo-init:
-	bin/transcrypt -c aes-256-cbc
-
 sync-repo:
 	rsync -r . $(USER)@$(IP):/app/
 	ssh $(USER)@$(IP) 'cd /app && make up'
