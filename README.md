@@ -24,6 +24,11 @@
     ```
     make sync-repo
     ```
+### Pull files from Server
+- If for some reason changes were made in wp-content outside of the repository, you can pull all files using following command
+    ```
+    make pull-server-files
+    ```
 
 ### You can tunnel connection to remote database over ssh using following command
     ```
