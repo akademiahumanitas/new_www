@@ -1,0 +1,29 @@
+.archive-header {
+    background-color: var(--color-primary);
+    margin-bottom: 4.8rem;
+
+    &:has( + .secondary-menu) {
+        margin-bottom: 0;
+
+        .container {
+            @include md {
+                padding-bottom: 4.8rem;
+            }
+        }
+    }
+
+    .container {
+        padding-top: 4.8rem;
+        padding-bottom: 8.8rem;
+    }
+
+    &__title {
+        color: var(--color-white);
+        margin-bottom: 0;
+        margin-top: 0.8rem;
+    }
+
+    .triangle {
+        margin-top: -5rem;
+    }
+}

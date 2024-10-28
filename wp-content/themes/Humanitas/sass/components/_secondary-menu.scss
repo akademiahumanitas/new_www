@@ -1,0 +1,120 @@
+.secondary-menu {
+    background-color: var(--color-primary);
+    position: sticky;
+    z-index: 14;
+    top: calc(var(--header-height) - 1px);
+    overflow: hidden;
+
+    .container {
+        position: relative;
+
+        &:before {
+            right: 100%;
+            width: 30vw;
+            background-color: var(--color-primary);
+            top: 0;
+            bottom: 0;
+            content: '';
+            position: absolute;
+            z-index: 1;
+        }
+
+        &:after {
+            left: 100%;
+            width: 30vw;
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, var(--color-primary) 27%);
+            top: 0;
+            bottom: 0;
+            content: '';
+            position: absolute;
+            z-index: 1;
+        }
+    }
+
+    &__list {
+        display: flex;
+ 
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        padding-bottom: 0.8rem;
+        padding-top: 1rem;
+
+        .current-menu-item > a,
+        .current-menu-parent > a {
+            border-color: var(--color-yellow) !important;
+            color: var(--color-yellow) !important;
+        }
+
+        &:has(.slick-prev[aria-disabled=false]) .slick-list {
+            padding-left: 6rem;
+        }
+    }
+
+    &__link, .menu-item a {
+        color: var(--color-white);
+        text-decoration: none;
+        padding: 0.8rem 0 1.2rem;
+        font-size: var(--font-size-20);
+        font-weight: var(--font-weight-medium);
+        border-top: 0 !important;
+        border-left: 0 !important;
+        border-right: 0 !important;
+        border-bottom: 2px solid transparent;
+        transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+
+        svg {
+            display: block;
+            width: 1.6rem;
+            height: 1.6rem;
+
+            path {
+                fill: white;
+            }
+        }
+
+        @include lg {
+            font-size: var(--font-size-16);
+        }
+
+        &.active {
+            border-color: var(--color-yellow);
+            color: var(--color-yellow);
+        }
+
+        &:hover,
+        &:focus {
+            border-color: var(--color-yellow);
+            color: var(--color-white);
+        }
+    }
+    .slick-track {
+        display: flex !important;
+        gap: 5.6rem;
+        align-items: center;
+        overflow: auto !important;
+    }
+
+    .slick-list {
+        overflow: visible !important;
+    }
+
+    .slick-arrow {
+        width: 4.8rem;
+        height: 4.8rem;
+        --color-slick-arrow-background: var(--color-text-secondary);
+        --color-slick-arrow: var(--color-white);
+        border-color: var(--color-slick-arrow-background);
+
+        &.slick-prev {
+            left: 0;
+        }
+
+        &.slick-next {
+            right: 0;
+        }
+    }
+}

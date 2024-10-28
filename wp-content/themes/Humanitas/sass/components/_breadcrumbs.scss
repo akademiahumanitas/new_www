@@ -1,0 +1,29 @@
+.breadcrumbs {
+    &--secondary {
+        .breadcrumbs__link {
+            color: var(--color-white);
+
+            &--current {
+                color: var(--color-text-tertiary);
+            }
+        }
+
+        svg path {
+            fill: var(--color-text-tertiary);
+        }
+    }
+    
+    &__link {
+        color: var(--color-primary);
+        text-decoration: none;
+        font-size: var(--font-size-14);
+        font-weight: var(--font-weight-medium);
+        letter-spacing: 0.28px;
+        line-height: 1.5;
+
+        &--current {
+            font-weight: var(--font-weight-medium);
+            color: var(--color-text-tertiary);
+        }
+    }
+}

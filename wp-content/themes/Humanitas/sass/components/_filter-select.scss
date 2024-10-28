@@ -1,0 +1,68 @@
+.filter-select {
+    margin-bottom: 1.6rem;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &__wrapper {
+        &[open] {
+            .filter-select__label {
+                margin-bottom: 1.6rem;
+            }
+            .filter-select__label-icon {
+                transform: rotate(0deg);
+            }
+        }
+    }
+    
+    &__label {
+        display: flex;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding: 0.4rem 0;
+        cursor: pointer;
+
+        &::-webkit-details-marker {
+            display:none;
+        }
+
+        &-text {
+            color: var(--color-black);
+            font-size: var(--font-size-16);
+            font-weight: var(--font-weight-medium);
+        }
+        
+        &-icon {
+            width: 2rem;
+            height: 2rem;
+            transform: rotate(180deg);
+            
+            svg {
+                display: block;
+                width: 100%;
+                height: auto;
+
+                path {
+                    fill: var(--color-primary);
+                }
+            }
+        }
+    }
+
+    &__checkbox {
+        &-label {
+            margin-bottom: 1.6rem;
+            display: flex;
+            justify-content: start;
+            gap: 0.8rem;
+            color: var(--color-black);
+            font-size: var(--font-size-14);
+            font-weight: var(--font-weight-regular);
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

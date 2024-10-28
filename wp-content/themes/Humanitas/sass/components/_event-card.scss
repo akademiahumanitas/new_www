@@ -1,0 +1,79 @@
+.event-card {
+    $this: &;
+    display: flex !important;
+    flex-direction: column;
+    height: 100%;
+    transform: translateY(0);
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+        transform: translateY(-0.8rem) !important;
+    }
+
+    &--old {
+        #{$this}__image img {
+            filter: grayscale(100%);
+        }
+        #{$this}__date {
+            color: #8F90A4;
+        }
+    }
+
+    &__image {
+        aspect-ratio: 0.82;
+        margin: 0;
+        border-radius: 0.4rem 0.4rem 0 0;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    &__content {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        padding: 1.6rem;
+        flex: 1;
+        border-radius: 0 0 0.4rem 0.4rem;
+
+        &:hover,
+        &:focus {
+            color: var(--color-white);
+        }
+
+    }
+    
+    &__date {
+        color: #E8EBFE;
+        font-size: var(--font-size-14);
+        font-weight: var(--font-weight-bold);
+        margin: 0 0 0.8rem;
+        text-transform: uppercase;
+    
+    }
+
+    &__title {
+        font-size: var(--font-size-20);
+        font-weight: var(--font-weight-medium);
+        margin: 0;
+        
+        &-link {
+            -webkit-box-orient: vertical;
+            color: var(--color-white);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            text-decoration: none;
+            text-overflow: ellipsis;
+
+            &:hover,
+            &:focus {
+                color: var(--color-white);
+            }
+
+        }
+    }
+}

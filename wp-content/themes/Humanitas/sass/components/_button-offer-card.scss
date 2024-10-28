@@ -1,0 +1,125 @@
+.button-offer-card {
+    display: inline-flex;
+    position: relative;
+    padding: 1.6rem;
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    text-decoration: none;
+    justify-content: flex-start;
+    align-items: flex-end;
+    transition: transform 0.3s ease-in-out;
+    min-height: 12.9rem;
+    border: 0;
+    appearance: none;
+    cursor: pointer;
+    box-shadow: none;
+    text-transform: uppercase;
+    font-size: var(--font-size-20);
+    border-radius: 4px;
+    overflow: hidden;
+
+    @include xl {
+        min-height: 10rem;
+    }
+
+    @include md {
+        min-height: unset;
+    }
+
+    @include sm {
+        width: 100%;
+    }
+
+    &:hover,
+    &:focus,
+    &.active {
+        .button-offer-card__icon path {
+            fill: var(--color-primary);
+        }
+        .button-offer-card__title {
+            color: var(--color-primary);
+        }
+
+        &:before {
+            height: 100%;
+        }
+
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 0;
+        background-color: var(--color-white);
+        transition: height 0.3s ease-in-out;
+    }
+    
+    &--blue {
+        min-height: 21.2rem;
+        background-color: var(--color-primary-blue);
+
+        .button-offer-card__title {
+            font-size: var(--font-size-24);
+
+            @include xl {
+                font-size: var(--font-size-18);
+            }
+
+            @include lg {
+                font-size: var(--font-size-16);
+            }
+        }
+
+        @include xl {
+            min-height: 13rem;
+        }
+
+        @include md {
+            min-height: 10rem;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 1.6rem;
+        right: 1.6rem;
+        width: 8rem;
+        height: 8rem;
+
+        @include xl {
+            width: 4.8rem;
+            height: 4.8rem;
+        }
+
+        svg {
+            display: block;
+            max-width: 100%;
+            
+            path {
+                transition: fill 0.3s ease-in-out;
+                fill: var(--color-white);
+            }
+        }
+    }
+
+    &__title {
+        color: var(--color-white);
+        position: relative;
+        z-index: 2;
+        text-align: left;
+        transition: color 0.3s ease-in-out;
+        font-size: var(--font-size-20);
+        font-weight: var(--font-weight-medium);
+
+        @include xl {
+            font-size: var(--font-size-18);
+        }
+
+        @include lg {
+            font-size: var(--font-size-15);
+        }
+    }
+}

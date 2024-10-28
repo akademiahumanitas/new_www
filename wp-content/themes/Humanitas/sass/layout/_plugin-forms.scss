@@ -1,0 +1,42 @@
+body .wpforms-form  {
+    --wpforms-field-size-font-size: var(--font-size-14);
+    --wpforms-field-size-input-height: 5.2rem;
+    --wpforms-field-size-line-height: 1.5;
+    --wpforms-label-color: var(--text-color-secondary);
+    --wpforms-field-border-color: var(--color-border-forms);
+    --wpforms-field-border-radius: 0.4rem;
+    --wpforms-field-size-input-spacing: 0.8rem;
+    --wpforms-label-size-font-size: var(--font-size-14);
+    --wpforms-label-size-line-height: 1.5;
+    
+    .wpforms-field-container{
+        .wpforms-field-label {
+            font-size: var(--font-size-14);
+            font-weight: var(--font-weight-medium);
+            color: var(--color-text-secondary);
+            margin-bottom: 0.8rem;
+        }
+        .wpforms-field {
+            padding: 0 0 1.6rem 0 !important;
+
+            input[type=checkbox] {
+                border: 1px solid var(--color-border-forms) !important;
+            }
+        }
+    }
+
+    .wpforms-submit-container {
+        --wpforms-button-size-height: 5.3rem;
+        --wpforms-button-border-radius: 0.4rem;
+        --wpforms-button-background-color: var(--color-yellow);
+        --wpforms-button-text-color:  var(--color-primary);
+        --color-button-hover: var(--color-primary);
+        --color-button-background-hover: var(--color-yellow);
+        
+        button[type="submit"] {
+            @include button();
+            @include button-size-large();
+            @include button-color();
+        }
+    }
+}

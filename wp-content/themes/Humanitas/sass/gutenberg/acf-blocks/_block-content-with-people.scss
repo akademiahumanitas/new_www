@@ -1,0 +1,107 @@
+.block-content-with-people {
+    margin-block: 12rem 16rem;
+
+    @include lg {
+        margin-block: 8rem;
+    }
+
+    @include md {
+        margin-block: 4.8rem;
+    }
+
+    &--big-people {
+        .block-content-with-people__title {
+            text-align: center;
+            margin-bottom: 6.4rem;;
+            margin-inline: auto;
+            display: table;
+        }
+
+        .block-content-with-people__content {
+            margin-block: 0 6.4rem;
+            text-align: center;
+            margin-inline: auto;
+            max-width: 80rem;
+        }
+        .block-content-with-people__people {
+            display: flex;
+            justify-content: center;
+            row-gap: 4.8rem;
+            flex-wrap: wrap;
+
+            .person-card {
+                max-width: 32rem;
+                flex: 1 0 32rem;
+
+                @include md {
+                    max-width: 27rem;
+                    flex: 1 0 27rem;
+                }
+            }
+        }
+    }
+    
+    &__title {
+        margin: 0;
+    }
+
+    &__content {
+        margin-block: 3.6rem;
+        max-width: 53rem;
+
+        @include lg  {
+            max-width: 100%;
+        }
+    }
+
+
+    &__wrapper {
+        display: flex;
+        align-items: flex-start;
+        gap: 4.8rem;
+
+        @include md {
+            flex-direction: column;
+        }
+    }
+
+    &__contact-person {
+        max-width: 30.6rem;
+        flex: 1 0 30.6rem;
+
+        @include lg {
+            flex: 1;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .contact-box {
+            @include md {
+                display: flex;
+            }
+
+            @include sm {
+                flex-direction: column;
+            }
+
+            &__content {
+                @include lg {
+                    padding: 2.4rem;
+                    flex: 1;
+                }
+            }
+        }
+    }
+
+    &__people {
+        display: grid;
+        column-gap: 4.8rem;
+        row-gap: 2.5rem;
+        flex: 1;
+        grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+
+        .person-card {
+            width: 100%;
+        }
+    }
+}

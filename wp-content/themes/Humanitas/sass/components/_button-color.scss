@@ -1,0 +1,20 @@
+@mixin button-color($background: var(--color-yellow), $color: var(--color-primary), $border: var(--color-yellow)) {
+    background-color: $background;
+    border-color: $border;
+    color: $color;
+
+    svg {
+        path {
+            fill: $color;
+        }
+    }
+
+    &:hover,
+    &:focus {;
+        svg {
+            path {
+                fill: $color;
+            }
+        }
+    }
+}

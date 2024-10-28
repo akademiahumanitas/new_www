@@ -1,0 +1,100 @@
+.person-card {
+    display: flex;
+    gap: 1.6rem;
+
+    &--big {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        
+        .person-card__image {
+            aspect-ratio: 0.66;
+            max-width: 18rem;
+            flex: auto;
+            align-self: center;
+        }
+
+        .person-card__content {
+            max-width: 32rem;
+            align-self: center;
+        }
+
+        .person-card__name {
+            margin-bottom: 0;
+        }
+    }
+
+    &__image {
+        aspect-ratio: 0.918;
+        margin: 0;
+        max-width: 11.2rem;
+        width: 100%;
+        flex:  1 0 11.2rem;
+        overflow: hidden;
+        height: auto;
+        align-self: flex-start;
+        background-color: var(--color-background-3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        svg {
+            margin: 0;
+            display: block;
+            width: 4.8rem;
+            height: 4.8rem;
+        }
+    }
+
+    &__content {
+        flex: 1;
+    }
+
+    &__name {
+        font-size: var(--font-size-20);
+        font-weight: var(--font-weight-medium);
+        color: var(--color-black);
+        margin-bottom: 1.6rem;
+        margin-top: 0;
+    }
+
+    &__position {
+        color: var(--color-text-secondary);
+        font-size: var(--font-size-14);
+        font-weight: var(--font-weight-semibold);
+        text-transform: uppercase;
+        margin-bottom: 0.8rem;
+    }
+
+    &__contact-item {
+        display: flex;
+        gap: 0.6rem;
+        align-items: center;
+        justify-content: flex-start;
+        color: var(--color-black);
+        text-decoration: none;
+        font-size: var(--font-size-14);
+        align-items: flex-start;
+        max-width: 100%;
+        word-break: break-all;
+        margin-bottom: 0.8rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        svg {
+            display: block;
+        }
+    }
+
+    &__contact-icon {
+        margin-top: 0.2rem;
+    }
+}

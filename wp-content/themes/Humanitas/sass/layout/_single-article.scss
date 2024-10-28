@@ -1,0 +1,100 @@
+.single-article {
+    display: flex;
+    gap: 7.2rem;
+    justify-content: flex-start;
+
+    @include xl {
+        gap: 4.8rem;
+    }
+
+    @include md {
+        flex-direction: column;
+    }
+
+    &__sidebar {
+        flex: 1 0 32rem;
+        max-width: 32rem;
+
+        @include md {
+            flex: 1;
+            max-width: 100%;
+        }
+
+        &-wrapper {
+            padding: 2.4rem;
+            border: 1px solid var(--color-border-forms);
+            border-radius: 4px;
+            align-self: flex-start;
+            position: sticky;
+            top: calc(var(--header-height) + 1.5rem);
+
+        }
+
+        &-heading {
+            margin-bottom: 2.4rem;
+            font-size: var(--font-size-20);
+            color: var(--color-black);
+            font-weight: var(--font-weight-medium);
+        }
+
+        &-menu {
+            display: flex;
+            gap: 1.6rem;
+            flex-direction: column;
+
+            a {
+               font-size: var(--font-size-16);
+               font-weight: var(--font-weight-medium);
+               color: var(--color-text-secondary);
+               text-decoration: none;
+
+               &:hover,
+               &:focus,
+               &:target {
+                color: var(--color-primary-blue);
+               }
+            }
+        }
+    }
+
+    &__content {
+        flex: 1;
+        order: 2;
+        max-width: 63.6rem;
+        color: black;
+        --color-paragraph: black;
+        --color-heading: var(--color-black);
+
+        & > p {
+            max-width: 52.5rem;
+        }
+        
+        h1,h2,h3,h4,h5,h6 {
+            margin-bottom: 1.6rem;
+        }
+
+        h1 {
+            font-size: var(--font-size-24);
+        }
+
+        h2 {
+            font-size: var(--font-size-22);
+        }
+
+        h3 {
+            font-size: var(--font-size-20);
+        }
+
+        h4 {
+            font-size: var(--font-size-18);
+        }
+
+        h5 {
+            font-size: var(--font-size-16);
+        }
+    }
+}
+
+.block-single:last-child {
+    margin-bottom: 4.8rem;
+}
