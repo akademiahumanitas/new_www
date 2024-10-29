@@ -1,0 +1,244 @@
+// stylelint-disable rem-over-px/rem-over-px
+// CSS Variables for responsive fonts
+:root {
+  // Heading font sizes
+  --font-size-hero: 48px;
+  --font-size-h1: 40px;
+  --font-size-h2: 40px;
+  --font-size-h3: 2.8rem;
+  --font-size-h4: 20px;
+  --font-size-h5: 16px;
+  --font-size-h6: 14px;
+
+  // Paragraph font sizes
+  --font-size-12: 12px;
+  --font-size-13: 13px;
+  --font-size-14: 14px;
+  --font-size-15: 15px;
+  --font-size-16: 16px;
+  --font-size-17: 17px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-22: 22px;
+  --font-size-24: 24px;
+  --font-size-32: 32px;
+
+  // Element font sizes
+  --font-size-paragraph: var(--font-size-16);
+  --font-size-nav-toggle-label: 15px;
+  --font-size-captions: 15px;
+
+  // Line-heights
+  --line-height-heading: 1.5;
+  --line-height-core-heading: 1.23;
+  --line-height-paragraph: 1.5;
+
+  // Font weights
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-paragraph: var(--font-weight-regular);
+  --font-weight-heading: var(--font-weight-semibold);
+
+  // Heading font sizes in mobile
+  @include lg {
+    --font-size-hero: 32px;
+    --font-size-h1: 32px;
+    --font-size-h2: 24px;
+    --font-size-h3: 21px;
+    --font-size-h4: 18px;
+    --font-size-h5: 14px;
+    --font-size-h6: 12px;
+    --font-size-paragraph: 16px;
+    --font-size-32: 28px;
+  }
+
+  @include md {
+    --font-size-hero: 24px;
+    --font-size-h1: 32px;
+    --font-size-h2: 24px;
+    --font-size-h3: 21px;
+    --font-size-h4: 18px;
+    --font-size-h5: 14px;
+    --font-size-h6: 12px;
+    --font-size-paragraph: 16px;
+    --font-size-32: 24px;
+  }
+
+  // Heading font sizes in mobile
+  @media (max-width: $container-mobile) { // 600
+    --font-size-hero: 24px;
+    --font-size-h1: 32px;
+    --font-size-h2: 24px;
+    --font-size-h3: 21px;
+    --font-size-h4: 18px;
+    --font-size-h5: 14px;
+    --font-size-h6: 12px;
+    --font-size-paragraph: 16px;
+    --font-size-24: 20px;
+    --font-size-32: 24px;
+  }
+
+  // Element font sizes in tiny phones like iPhone 5S
+  @media (max-width: 420px) {
+    --font-size-16: 14px;
+    --font-size-nav-toggle-label: 13px;
+
+    --font-size-24: 18px;
+  }
+}
+
+.font-size {
+  &-big {
+      // Heading font sizes
+    --font-size-hero: 52px;
+    --font-size-h1: 44px;
+    --font-size-h2: 44px;
+    --font-size-h3: 3.2rem;
+    --font-size-h4: 24px;
+    --font-size-h5: 20px;
+    --font-size-h6: 16px;
+
+    // Paragraph font sizes
+    --font-size-12: 14px;
+    --font-size-13: 15px;
+    --font-size-14: 16px;
+    --font-size-15: 17px;
+    --font-size-16: 18px;
+    --font-size-17: 19px;
+    --font-size-18: 20px;
+    --font-size-20: 22px;
+    --font-size-22: 24px;
+    --font-size-24: 26px;
+    --font-size-32: 34px;
+
+    // Element font sizes
+    --font-size-paragraph: var(--font-size-16);
+    --font-size-nav-toggle-label: 17px;
+    --font-size-captions: 17px;
+
+    // Heading font sizes in mobile
+    @include lg {
+      --font-size-hero: 34px;
+      --font-size-h1: 34px;
+      --font-size-h2: 26px;
+      --font-size-h3: 25px;
+      --font-size-h4: 22px;
+      --font-size-h5: 18px;
+      --font-size-h6: 16px;
+      --font-size-paragraph: 17px;
+      --font-size-32: 30px;
+    }
+
+    @include md {
+      --font-size-hero: 28px;
+      --font-size-h1: 30px;
+      --font-size-h2: 25px;
+      --font-size-h3: 22px;
+      --font-size-h4: 20px;
+      --font-size-h5: 16px;
+      --font-size-h6: 15px;
+      --font-size-paragraph: 16px;
+      --font-size-32: 26px;
+    }
+
+    // Heading font sizes in mobile
+    @media (max-width: $container-mobile) { // 600
+      --font-size-hero: 26px;
+      --font-size-h1: 28px;
+      --font-size-h2: 24px;
+      --font-size-h3: 21px;
+      --font-size-h4: 18px;
+      --font-size-h5: 14px;
+      --font-size-h6: 12px;
+      --font-size-paragraph: 17px;
+      --font-size-24: 24px;
+      --font-size-32: 25px;
+    }
+
+    // Element font sizes in tiny phones like iPhone 5S
+    @media (max-width: 420px) {
+      --font-size-16: 15px;
+
+      --font-size-24: 20px;
+    }
+  }
+
+  &-bigger {
+      // Heading font sizes
+      --font-size-hero: 53px;
+      --font-size-h1: 45px;
+      --font-size-h2: 45px;
+      --font-size-h3: 3.3rem;
+      --font-size-h4: 25px;
+      --font-size-h5: 21px;
+      --font-size-h6: 17px;
+  
+      // Paragraph font sizes
+      --font-size-12: 15px;
+      --font-size-13: 16px;
+      --font-size-14: 17px;
+      --font-size-15: 18px;
+      --font-size-16: 19px;
+      --font-size-17: 20px;
+      --font-size-18: 21px;
+      --font-size-20: 23px;
+      --font-size-22: 25px;
+      --font-size-24: 27px;
+      --font-size-32: 35px;
+  
+      // Element font sizes
+      --font-size-paragraph: var(--font-size-16);
+      --font-size-nav-toggle-label: 18px;
+      --font-size-captions: 18px;
+  
+  
+      // Heading font sizes in mobile
+      @include lg {
+        --font-size-hero: 35px;
+        --font-size-h1: 35px;
+        --font-size-h2: 27px;
+        --font-size-h3: 26px;
+        --font-size-h4: 23px;
+        --font-size-h5: 19px;
+        --font-size-h6: 17px;
+        --font-size-paragraph: 18px;
+        --font-size-32: 31px;
+      }
+  
+      @include md {
+        --font-size-hero: 29px;
+        --font-size-h1: 31px;
+        --font-size-h2: 27px;
+        --font-size-h3: 23px;
+        --font-size-h4: 21px;
+        --font-size-h5: 17px;
+        --font-size-h6: 16px;
+        --font-size-paragraph: 17px;
+        --font-size-32: 27px;
+      }
+  
+      // Heading font sizes in mobile
+      @media (max-width: $container-mobile) { // 600
+        --font-size-hero: 27px;
+        --font-size-h1: 29px;
+        --font-size-h2: 25px;
+        --font-size-h3: 22px;
+        --font-size-h4: 19px;
+        --font-size-h5: 15px;
+        --font-size-h6: 13px;
+        --font-size-paragraph: 18px;
+        --font-size-24: 25px;
+        --font-size-32: 26px;
+      }
+  
+      // Element font sizes in tiny phones like iPhone 5S
+      @media (max-width: 420px) {
+        --font-size-16: 16px;
+  
+        --font-size-24: 21px;
+      }
+  }
+
+}

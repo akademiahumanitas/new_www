@@ -1,0 +1,158 @@
+.block-content-with-table {
+    position: relative;
+    background: var(--color-primary);
+    margin-block: 12.8rem;
+
+    @include sm {
+        margin-block: 4.8rem;
+    }
+
+    .container {
+        padding-block: 12rem 16rem;
+
+        @include md {
+            padding-block: 8rem 10rem;
+        }
+    }
+    
+    &__title {
+        margin-bottom: 3.2rem;
+        color: var(--color-white);
+    }
+
+    &__content {
+        margin-bottom: 3.2rem;
+
+        * {
+            color: var(--color-white);
+        }
+
+        @include lg {
+            max-width: 100%;
+        }
+    }
+
+    &__information {
+        display: flex;
+        margin-bottom: 2.4rem;
+        row-gap: 2.4rem;
+        flex-wrap: wrap;
+
+        &-title {
+            color: var(--color-white);
+            font-size: var(--font-size-20);
+            font-weight: var(--font-weight-medium);
+            margin-bottom: 0.4rem;
+        }
+
+        &-content {
+            color: var(--color-white);
+            margin: 0;
+        }
+
+        &-item {
+            min-width: 25rem;
+            width: 100%;
+            max-width: 32.4rem;
+            flex: 1 0 32.4rem;
+            padding-right: 2rem;
+        }
+    }
+
+    &__table {
+        color: var(--color-white);
+        --container-width: calc(4 * 32.4rem);
+        position: relative;
+        container-type: inline-size;
+        container-name: tableContainer;
+
+        &-wrapper {
+            overflow-x: auto;
+            border: 1px solid var(--color-text-secondary);
+            border-radius: 0.4rem;
+            background-color: var(--color-text-secondary);
+            width: 100%;
+        }
+
+        &-row {
+            display: flex;
+            border-top: 1px solid var(--color-text-secondary);
+
+            &:first-child {
+                border-top: none;
+
+                .block-content-with-table__table-cell:not(:first-child) {
+                    text-align: center;
+                    background-color: var(--color-primary);
+                }
+
+                .block-content-with-table__table-cell:first-child {
+                    background-color: var(--color-primary);
+                }
+            }
+            
+            &:not(:first-child) {
+                .block-content-with-table__table-cell:first-child {
+                    background-color: var(--color-primary);
+                }
+                
+                .block-content-with-table__table-cell:not(:first-child) {
+                    text-align: center;
+                    font-weight: var(--font-weight-medium);
+                    background-color: var(--color-primary-dark);
+                }
+            }
+        }
+
+        &-cell {
+            min-width: 25rem;
+            width: 100%;
+            flex: 1 0 32.3rem;
+            max-width: 100%;
+            border-right: 1px solid var(--color-text-secondary);
+
+            padding: 0.8rem;
+
+            @include md {
+                max-width: 28rem;
+                flex: 1 0 28rem;
+            }
+
+            &:last-child {
+                border-right: 0;
+            }
+        }
+    }
+
+    .triangle {
+        &--bottom-left {
+            position: absolute;
+            bottom: -0.05rem;
+            top: auto;
+            width: 100%;
+        }
+
+        &--top-right {
+            position: absolute;
+            top: -0.05rem;
+            bottom: auto;
+            width: 100%;
+        }
+    }
+}
+
+        
+@container tableContainer (max-width: 1200px) {
+    .block-content-with-table__table:after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 1px;
+        right: 0.5px;
+        bottom: 1px;
+        width: 5rem;
+        pointer-events: none;
+        background: linear-gradient(to left, var(--color-primary) 20%, transparent 100%);
+        border-radius: 0.4rem 0.4rem 0 0;
+   }
+}

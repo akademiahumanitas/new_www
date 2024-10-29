@@ -1,0 +1,18 @@
+@mixin button-tertiary() { 
+    background-color: transparent;
+    border-color: var(--color-text-secondary);
+    color: var(--color-white);
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-white);
+      border-color: var(--color-white);
+      color: var(--color-primary);
+
+      .button__icon {
+        svg path {
+          fill: var(--color-primary);
+        }
+      }
+    }
+}

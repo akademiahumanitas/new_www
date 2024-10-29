@@ -1,0 +1,26 @@
+// stylelint-disable-next-line max-line-length
+@mixin button-style-ghost($background: transparent, $background-hover: var(--color-button-background), $color: #08113C, $hover: var(--color-white), $border: var(--border-width-input-field) solid var(--color-primary-light), $transition: all 0.3s cubic-bezier(.25, .46, .45, .94)) {
+  background-color: $background;
+  border: $border;
+  color: $color;
+  transition: $transition;
+
+  &.focus,
+  &:focus,
+  &:hover {
+    background-color: $background-hover;
+    border-color: $background-hover;
+    color: $hover;
+  }
+
+  &:disabled {
+    color: rgba(#08113C, 0.3); // --color-primary with 0.3 opacity
+
+    &:hover,
+    &:focus {
+      background-color: $background;
+      border: $border;
+      color: rgba(#08113C, 0.3); // --color-primary with 0.3 opacity
+    }
+  }
+}

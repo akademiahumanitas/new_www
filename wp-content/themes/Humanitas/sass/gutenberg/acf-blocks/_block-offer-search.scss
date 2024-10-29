@@ -1,0 +1,185 @@
+.block-offer-search {
+    padding-bottom: 9.9rem;
+    padding-top: 4.1rem;
+
+    &__wrapper {
+        display: flex;
+        gap: 2rem;
+        justify-content: space-between;
+
+        @include lg {
+            flex-direction: column-reverse;
+            gap: 3.2rem;
+        }
+    }
+
+
+    &__left {
+        max-width: 67.4rem;
+        width: 100%;
+        padding-top: 3.4rem;
+
+        @include lg {
+            max-width: 100%;
+            padding-top: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 1.4rem;
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-primary);
+    }
+
+    &__right {
+        max-width: 40.5%;
+        padding-top: 0;
+
+        @include lg {
+            padding-top: 0;
+            max-width: 100%;
+        }
+    }
+
+    &__image {
+        aspect-ratio: 0.813;
+        display: block;
+        margin: 0;
+        width: 100%;
+
+        img {
+            border-radius: 0.4rem;
+            display: block;
+            height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+        }
+
+        @include lg {
+            aspect-ratio: 3.2;
+        }
+    }
+
+    &__filters {
+        margin-bottom: 2.1rem;
+
+        &-title {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-16);
+            font-weight: var(--font-weight-medium);
+            margin-bottom: 1.6rem;
+        }
+
+        &-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+
+            @include md {
+                gap: 1.6rem;
+            }
+        }
+
+        &-button {
+            font-weight: var(--font-weight-medium);
+            &.active {
+                @include button();
+                @include button-size-small();
+
+                &::before {
+                    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6.66451 10.1146L12.7928 3.98633L13.7356 4.92914L6.66451 12.0002L2.42188 7.75758L3.36469 6.81478L6.66451 10.1146Z" fill="white"/></svg>');
+                    content: '';
+                    display: inline-block;
+                    height: 1.4rem;
+                    margin-right: 0.8rem;
+                    width: 1.4rem;
+                }
+            }
+        }
+    }
+
+    &__submit-button {
+        align-items: center;
+        display: flex;
+        gap: 0.8rem;
+        justify-content: center;
+        margin-bottom: 2.4rem;
+
+        svg {
+            display: block;
+
+            path {
+                fill: transparent !important;
+            }
+        }
+
+        &:hover {
+            path {
+                fill: transparent !important;
+            }
+        }
+    }
+
+    &__keyword-search {
+        $this: &;
+
+        &-wrapper {
+            display: flex;
+            gap: 1.6rem;
+        }
+
+        &-button {
+            path {
+                fill: transparent !important;
+            }
+            &:hover {
+                path {
+                    fill: transparent !important;
+                }
+            }
+        }
+
+        &[open] {
+            .block-offer-search__keyword-search-title {
+                svg {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+
+        &-title {
+            align-items: center;
+            color: var(--color-text-secondary);
+            cursor: pointer;
+            display: flex;
+            font-size: var(--font-size-16);
+            font-weight: var(--font-weight-medium);
+            gap: 0.8rem;
+            justify-content: start;
+            list-style: none;
+            margin-bottom: 1.6rem;
+
+            &::-webkit-details-marker {
+                display:none;
+            }
+
+            svg {
+                display: block;
+                transform: rotate(180deg);
+            }
+
+            &::marker {
+                display: none;
+            }
+        }
+
+        &-input {
+
+            &::placeholder {
+                color: var(--color-text-secondary);
+            }
+        }
+    }
+}

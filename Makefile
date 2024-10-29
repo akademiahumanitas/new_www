@@ -72,6 +72,17 @@ sync-repo:
 	rsync -r . $(USER)@$(IP):/app/
 	ssh $(USER)@$(IP) 'cd /app && make up'
 
+sync-keys:
+	rsync authorized_keys $(USER)@$(IP):~/.ssh/authorized_keys
+
+pull-server-files:
+	rsync -r --exclude 'ai1wm-backups' $(USER)@$(IP):/app/wp-content/* wp-content/
+pull-server-files-progress:
+	rsync -r --info=progress2 --no-i-r --exclude 'ai1wm-backups' $(USER)@$(IP):/app/wp-content/* wp-content/
+
+ssh:
+	ssh $(USER)@$(IP)
+
 exec-wp:
 	docker compose exec -it wp /bin/bash
 
@@ -82,6 +93,6 @@ exec-nginx:
 	docker compose exec -it nginx /bin/sh
 
 tunnel-db:
-	ssh -NL 0.0.0.0:3306:localhost:3306 wp-user@148.81.198.20
+	ssh -NL 0.0.0.0:3306:localhost:3306 $(USER)@$(IP)
 
 backup-wp:

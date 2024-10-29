@@ -1,0 +1,197 @@
+.block-three-boxes {
+    margin: 8rem 0;
+
+    @include lg {
+        margin-block: 6.4rem 0;
+    }
+    
+    &__content {
+        text-align: center;
+        margin-bottom: 6.4rem;
+        font-size: var(--font-size-24);
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-primary);
+        max-width: 83.8rem;
+        margin-inline: auto;
+        display: block;
+    }
+
+    &__boxes {
+        display: flex;
+        justify-content: center;
+        margin: 6.4rem 0;
+        gap: 4.8rem;
+
+        @include md {
+            flex-direction: column;
+            align-items: center;
+            gap: 2.4rem;
+        }
+    }
+
+    &__box {
+        max-width: 30.6rem;
+        padding: 2.4rem;
+        text-align: center;
+        background-color: var(--color-background-3);
+        width: 100%;
+        border-radius: 0.4rem;
+
+        @include md {
+            display: flex;
+            gap: 4.8rem;
+            max-width: 100%;
+            align-items: center
+        }
+
+        &--featured {
+            .block-three-boxes__box-icon {
+                background-color: var(--color-primary-blue);
+            }
+        }
+
+        &-title {
+            color: var(--color-primary);
+            font-size: var(--font-size-32);
+            font-weight: var(--font-weight-medium);
+        }
+
+        &-icon {
+            background-color: #83B5EA;
+            width: 12.8rem;
+            height: 12.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem;
+
+            svg, img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        &-content {
+            img:not(:first-child):not(:last-child) {
+                margin: 1.2rem 0;
+            }
+
+            @include md {
+                flex: 1;
+            }
+
+            img {
+                max-width: 22.4rem;
+                max-height: 8.6rem;
+                width: auto;
+                height: auto;
+
+                @include md {
+                    max-width: 13rem;
+                }
+            }
+            p:last-child:empty {
+                margin-top: -3.2rem;
+            }
+        }
+    }
+
+    &__columns {
+        display: flex;
+        gap: 9.6rem;
+
+        @include lg {
+            gap: 4.8rem;
+        }
+
+        @include md {
+            flex-direction: column;
+        }
+    }
+
+    &__icons {
+        flex: 1;
+        
+        &-title {
+            position: relative;
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            font-size: var(--font-size-24);
+            line-height: 0.7;
+
+            &:after {
+                background-color: var(--color-yellow);
+                bottom: 0;
+                content: "";
+                height: .4rem;
+                left: 0;
+                position: absolute;
+                width: 100%;
+            }
+            
+            span {
+                background-color: var(--color-white);
+                font-weight: var(--font-weight-medium);
+                display: inline-block;
+                padding-right: 0.8rem;
+                position: relative;
+                z-index: 1;
+            }
+        }
+
+        &-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__icon {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+
+        &-link {
+            text-decoration: none;
+
+            .external-link-icon {
+                display: none;
+            }
+        }
+        
+        &-icon {
+            width: 9rem;
+            height: 9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            background-color: var(--color-primary);
+
+            @include lg {
+                width: 7.2rem;
+                height: 7.2rem;
+            }
+
+            svg, img {
+                display: block;
+                width: 100%;
+                height: auto;
+                max-width: 5.25rem;
+
+                @include lg {
+                    max-width: 4.2rem;
+                }
+            }
+        }
+
+        &-title {
+            margin: 0;
+            text-align: center;
+            font-size: var(--font-size-16);
+            font-weight: var(--font-weight-medium);
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+    }
+}

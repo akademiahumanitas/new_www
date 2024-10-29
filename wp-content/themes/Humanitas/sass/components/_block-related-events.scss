@@ -1,0 +1,64 @@
+.block-related-events {
+    margin-block: 12.8rem;
+
+    &__title {
+        margin: 0;
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-primary);
+    }
+
+    &__header {
+        align-items: center;
+        gap: 48px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4rem;
+    }
+    
+    &__slider {
+        margin: 0 -1.2rem;
+        
+    }
+
+    &__slide {
+        padding: 0 1.2rem;
+    }
+
+    .slick-track {
+        display: flex !important;
+        padding: 0.8rem 0;
+    }
+
+    .slick-slide {
+        height: auto;
+
+        & > div {
+            height:100%;
+        }
+    }
+
+    .slick-arrow {
+        top: 38%;
+        --color-slick-arrow: var(--color-white);
+        --color-slick-arrow-hover: var(--color-white);
+        --color-slick-arrow-background: rgba(26, 28, 56, 0.48);
+        --color-slick-arrow-hover-background: rgba(26, 28, 56, 0.48);
+        border: 0;
+
+        &.slick-prev {
+            left: -3.5rem;
+
+            @include xl {
+                left: 1.5rem;
+            }
+        }
+
+        &.slick-next {
+            right: -3.5rem;
+
+            @include xl {
+                right: 1.5rem;
+            }
+        }
+    }
+}

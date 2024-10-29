@@ -1,0 +1,114 @@
+.block-testimonial {
+    position: relative;
+    background-color: var(--color-background-3);
+    overflow: hidden;
+    margin-bottom: 3.8rem;
+    overflow: hidden;
+    
+    &__wrapper {
+        position: relative;
+        padding-block: 14.9rem 11.6rem;
+        max-width: 52.6rem;
+    }
+
+    &__background-image {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        bottom:0;
+        width: 73%;
+        right: 0;
+        overflow: hidden;
+        margin: 0;
+
+        &:after {
+            content: '';
+            background-image: 
+                linear-gradient(90deg, var(--color-background-3) 0%, rgba(255, 255, 255, 0) 50%),
+                linear-gradient(0deg, rgb(232 244 255 / 65%) 0%, rgb(232 244 255 / 65%) 100%);
+            opacity: 1;
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        img {
+            position: relative;
+            z-index: 1;
+            object-fit: cover;
+            object-position: top right;
+            filter: saturate(0);
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &__quote {
+        position: relative;
+        font-size: var(--font-size-20);
+        font-style: italic;
+        font-weight: var(--font-weight-medium);
+        letter-spacing: 0.1rem;
+        margin: 0;
+        margin-left: 11rem;
+
+        @include md {
+            margin-left: 5rem;
+        }
+
+        &::before {
+            content: "“";
+            right: 100%;
+            top: 5.7rem;
+            margin-right: 2.5rem;
+
+            @include md {
+                margin-right: 1.5rem;
+                top: 2.7rem;
+            }
+        }
+
+        &::after {
+            content: "”";
+            bottom: 2.3rem;
+            left: 100%;
+            margin-left: -19px;
+
+            @include md {
+                bottom: 1.3rem;
+                right: 0;
+                margin-left: 0;
+                left: auto;
+            }
+        }
+
+        &:before,
+        &:after {
+            color: var(--color-yellow);
+            font-weight: var(--font-weight-regular);
+
+            display: block;
+            position: absolute;
+            z-index: 1;
+            font-size: 22.6rem;
+            line-height: 0;
+
+            @include md {
+                font-size: 10rem;
+            }
+
+        }
+
+        cite {
+            display: block;
+            font-size: var(--font-size-18);
+            font-style: normal;
+            font-weight: var(--font-weight-medium);
+            letter-spacing: 0;
+            margin-top: 2.4rem;
+        }
+    }
+}
