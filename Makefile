@@ -5,11 +5,6 @@ TZ=Europe/Warsaw
 IP=148.81.198.20
 USER=wp-user
 
-ifneq (,$(wildcard ./.env))
-	include .env
-	export
-endif
-
 get-transcrypt:
 	curl -s -L https://github.com/elasticdog/transcrypt/archive/refs/tags/v2.2.3.tar.gz | tar zxf - -C bin/
 	mv bin/transcrypt-2.2.3/transcrypt bin/
