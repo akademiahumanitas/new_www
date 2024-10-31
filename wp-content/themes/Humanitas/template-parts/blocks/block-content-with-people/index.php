@@ -33,10 +33,10 @@ $description = get_field('description');
         <?php if($contact_person && $block_style === 'with-contact-person') : ?>
           <div class="block-content-with-people__contact-person">
             <?php
-            $image = get_post_thumbnail_id($contact_person);
-            $title = get_the_title($contact_person);
-            $text = get_field('short_description', $contact_person);
-            $link = ['url' => '#', 'title' => 'Skontaktuj się'];
+              $image = get_post_thumbnail_id($contact_person);
+              $title = get_the_title($contact_person);
+              $text = get_field('short_description', $contact_person);
+              $link = ['url' => '#', 'title' => 'Skontaktuj się'];
             ?>
             <?php get_theme_part('elements/contact-box', [
               'contact_box' => [
