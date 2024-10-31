@@ -7,9 +7,8 @@
 
     &__content {
         text-align: center;
+        margin-top: 3.2rem;
         margin-bottom: 6.4rem;
-        font-size: var(--font-size-24);
-        font-weight: var(--font-weight-semibold);
         color: var(--color-primary);
         max-width: 83.8rem;
         margin-inline: auto;
@@ -27,6 +26,13 @@
             align-items: center;
             gap: 2.4rem;
         }
+    }
+
+    &__title {
+        text-align: center;
+        color: var(--color-primary);
+        margin-inline: auto;
+        display: block;
     }
 
     &__sub-title {

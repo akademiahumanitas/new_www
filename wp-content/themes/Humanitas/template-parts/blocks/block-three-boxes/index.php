@@ -26,9 +26,6 @@ $description = get_field('description');
 			<?php if ($description) : ?>
 				<h4 class="block-three-boxes__description"><?php echo $description; ?></h4>
 			<?php endif; ?>
-			<?php if ($content) : ?>
-				<div class="block-three-boxes__content"><?php echo $content; ?></div>
-			<?php endif; ?>
 
 			<div class="block-three-boxes__boxes">
 				<?php if ($boxes) : ?>
@@ -45,6 +42,9 @@ $description = get_field('description');
 					<?php endforeach; ?>
 				<?php endif; ?>
 			</div>
+			<?php if ($content) : ?>
+				<div class="block-three-boxes__content"><?php echo $content; ?></div>
+			<?php endif; ?>
 			<div class="block-three-boxes__columns">
 				<?php get_theme_part('blocks/block-three-boxes/single-icons', [
 					'icons_title' => $left_icons_title,
