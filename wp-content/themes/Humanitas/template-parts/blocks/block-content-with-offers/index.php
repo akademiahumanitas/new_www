@@ -24,10 +24,10 @@ $is_hidden = get_field('is_hidden');
 						<h2 class="block-content-with-offers__title heading-underline heading-dot fade-in"><?= $title; ?></h2>
 					<?php endif; ?>
 					<?php if ($sub_title) : ?>
-						<h3 class="block-content-with-offers__sub-title"><?php echo $sub_title; ?></h3>
+						<h3 class="block-content-with-offers__sub-title fade-in"><?php echo $sub_title; ?></h3>
 					<?php endif; ?>
 					<?php if ($description) : ?>
-						<h4 class="block-content-with-offers__description"><?php echo $description; ?></h4>
+						<h4 class="block-content-with-offers__description fade-in"><?php echo $description; ?></h4>
 					<?php endif; ?>
 					<div class="block-content-with-offers__content fade-in">
 						<?= $content; ?>

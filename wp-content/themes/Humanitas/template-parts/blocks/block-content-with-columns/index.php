@@ -27,10 +27,10 @@ if($background_color === 'dark-blue' && str_word_count($title, 0, 'ąćęłńó�
 				<h2 class="block-content-with-columns__title heading-underline heading-dot fade-in"><?= $title; ?></h2>
 			<?php endif; ?>
 			<?php if ($sub_title) : ?>
-				<h3 class="block-content-with-columns__sub-title"><?php echo $sub_title; ?></h3>
+				<h3 class="block-content-with-columns__sub-title fade-in"><?php echo $sub_title; ?></h3>
 			<?php endif; ?>
 			<?php if ($description) : ?>
-				<h4 class="block-content-with-columns__description"><?php echo $description; ?></h4>
+				<h4 class="block-content-with-columns__description fade-in"><?php echo $description; ?></h4>
 			<?php endif; ?>
 			<div class="block-content-with-columns__content fade-in">
 				<?= $content; ?>

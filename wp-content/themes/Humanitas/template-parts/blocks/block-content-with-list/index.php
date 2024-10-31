@@ -1,6 +1,8 @@
 <?php
+    $title = get_field('title');
+    $sub_title = get_field('sub_title');
+    $description = get_field('description');
 
-    $title = get_field( 'section_title' );
     $content = get_field( 'content' );
     $list = get_field( 'list' );
     $image = get_field( 'image' );
@@ -22,7 +24,17 @@
                 <?= get_image( $image, 'full' ); ?>
             </figure>
             <div class="block-content-with-list__content">
-                <h2 class="block-content-with-list__title heading-underline heading-dot fade-in"><?= $title; ?></h3>
+
+                <?php if ($title) : ?>
+                    <h2 class="block-content-with-list__title heading-underline heading-dot fade-in"><?= $title; ?></h2>
+                <?php endif; ?>
+                <?php if ($sub_title) : ?>
+                    <h3 class="block-content-with-list__sub-title fade-in"><?php echo $sub_title; ?></h3>
+                <?php endif; ?>
+                <?php if ($description) : ?>
+                    <h4 class="block-content-with-list__description fade-in"><?php echo $description; ?></h4>
+                <?php endif; ?>
+
                 <div class="block-content-with-list__text fade-in">
                     <?= $content; ?>
                 </div>

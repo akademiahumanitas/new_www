@@ -21,10 +21,10 @@ $description = get_field('description');
 				<h2 class="block-three-boxes__title heading-underline heading-dot fade-in"><?php echo $title; ?></h2>
 			<?php endif; ?>
 			<?php if ($sub_title) : ?>
-				<h3 class="block-three-boxes__sub-title"><?php echo $sub_title; ?></h3>
+				<h3 class="block-three-boxes__sub-title fade-in"><?php echo $sub_title; ?></h3>
 			<?php endif; ?>
 			<?php if ($description) : ?>
-				<h4 class="block-three-boxes__description"><?php echo $description; ?></h4>
+				<h4 class="block-three-boxes__description fade-in"><?php echo $description; ?></h4>
 			<?php endif; ?>
 
 			<div class="block-three-boxes__boxes">
