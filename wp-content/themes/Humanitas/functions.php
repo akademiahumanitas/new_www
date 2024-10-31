@@ -41,7 +41,8 @@ add_action( 'after_setup_theme', function () {
     'acf/block-testimonial',
     'acf/block-hero',
     'acf/block-three-boxes',
-    'acf/block-steps-section'
+    'acf/block-steps-section',
+    'acf/block-map'
   ];
   
   $theme_settings = array(
@@ -214,6 +215,10 @@ add_action( 'after_setup_theme', function () {
       array(
         'name'          => 'block-steps-section',
         'title'         => 'Sekcja z krokami',
+      ),
+      array(
+        'name'          => 'block-map',
+        'title'         => 'Block z mapą',
       ),
     ),
 
