@@ -9,8 +9,8 @@
     $image_position = get_field( 'image_position' );
     $button_color = $background_color === 'dark-blue' ? 'button-white' : 'button-blue';
 
-    if($background_color === 'dark-blue' && str_word_count($title) > 1) {
-        $title = preg_replace('/\b(\w+)$/','<span class="text-highlight">$1</span>', $title);
+    if($background_color === 'dark-blue' && str_word_count($title, 0, 'ąćęłńóśźżĄĆĘŁŃÓŚŹŻ') > 1) {
+        $title = preg_replace('/\b([\p{L}]+)$/u','<span class="text-highlight">$1</span>', $title);
     }
 ?>
 <section class="block-content-with-gallery block-content-with-gallery--<?= $background_color;?> block-content-with-gallery--<?= $image_position;?>" id="<?= $block_ID; ?>">

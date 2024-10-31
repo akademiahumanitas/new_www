@@ -7,8 +7,8 @@ $columns = get_field( 'columns' ); // repeater with icon / image, title, content
 $background_color = get_field( 'background_color' ); // white / light-blue / dark-blue
 $block_ID = $block['id'];
 
-if($background_color === 'dark-blue' && str_word_count($title) > 1) {
-    $title = preg_replace('/\b(\w+)$/','<span class="text-highlight">$1</span>', $title);
+if($background_color === 'dark-blue' && str_word_count($title, 0, 'ąćęłńóśźżĄĆĘŁŃÓŚŹŻ') > 1) {
+    $title = preg_replace('/\b([\p{L}]+)$/u','<span class="text-highlight">$1</span>', $title);
 }
 
 ?>

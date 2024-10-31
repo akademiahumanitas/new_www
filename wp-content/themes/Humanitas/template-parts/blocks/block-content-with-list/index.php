@@ -8,8 +8,8 @@
     $background_color = get_field( 'background_color' );
     $image_position = get_field( 'image_position' );
 
-    if($background_color === 'dark-blue' && str_word_count($title) > 1) {
-        $title = preg_replace('/\b(\w+)$/','<span class="text-highlight">$1</span>', $title);
+    if($background_color === 'dark-blue' && str_word_count($title, 0, 'ąćęłńóśźżĄĆĘŁŃÓŚŹŻ') > 1) {
+        $title = preg_replace('/\b([\p{L}]+)$/u','<span class="text-highlight">$1</span>', $title);
     }
 ?>
 <section class="block-content-with-list block-content-with-list--<?= $background_color;?> block-content-with-list--<?= $image_position;?>" id="<?= $block_ID; ?>">
