@@ -133,8 +133,10 @@
     &__read-more {
         background: transparent;
         border-radius: 0.8rem;
-        padding: 0.8rem 1.6rem;
+        padding: 0.8rem 1.2rem;
         cursor: pointer;
+        margin-top: 2.4rem;
+        font-size: small;
     }
 
     &__gallery {
