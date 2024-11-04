@@ -28,20 +28,13 @@
                     <?= get_image( $image, 'full' ); ?>
                 </figure>
                 <div class="block-content-with-list__content">
-
                     <?php if ($title) : ?>
                         <h2 class="block-content-with-list__title heading-underline heading-dot fade-in"><?= $title; ?></h2>
                     <?php endif; ?>
-                    <?php if ($sub_title) : ?>
-                        <h3 class="block-content-with-list__sub-title fade-in"><?php echo $sub_title; ?></h3>
-                    <?php endif; ?>
-                    <?php if ($description) : ?>
-                        <h4 class="block-content-with-list__description fade-in"><?php echo $description; ?></h4>
-                    <?php endif; ?>
-
                     <div class="block-content-with-list__text fade-in">
                         <?= $content; ?>
                     </div>
+                    
                     <div class="block-content-with-list__list block-content-with-list__list--<?= $button_style;?> js-delay fade-in">
                         <?php foreach ( $list as $item ) :
                             ?>
@@ -61,6 +54,13 @@
 
                         <?php endforeach; ?>
                     </div>
+
+                    <?php if ($sub_title) : ?>
+                        <h3 class="block-content-with-list__sub-title fade-in"><?php echo $sub_title; ?></h3>
+                    <?php endif; ?>
+                    <?php if ($description) : ?>
+                        <h4 class="block-content-with-list__description fade-in"><?php echo $description; ?></h4>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
