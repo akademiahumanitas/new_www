@@ -24,6 +24,7 @@ import archiveFilters from './modules/archive-filters';
 import secondaryNavigation from './modules/secondary-navigation';
 import stickyNavigation from './modules/sticky-navigation';
 import megaMenu from './modules/mega-menu';
+import readMore from './modules/read-more';
 
 // Define Javascript is active by changing the body class
 document.body.classList.remove('no-js');
@@ -48,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
   secondaryNavigation();
   stickyNavigation();
   megaMenu();
+  readMore();
 
   // Fit video embeds to container
   reframe('.wp-has-aspect-ratio iframe');
