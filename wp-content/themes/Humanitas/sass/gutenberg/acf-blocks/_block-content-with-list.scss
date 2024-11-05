@@ -104,8 +104,9 @@
         font-weight: var(--font-weight-semibold);
     }
 
-    &__sub_title {
-        margin-bottom: 2.3rem;
+    &__sub-title {
+        margin-bottom: 1.2rem;
+        margin-bottom: 2.4rem;
         color: var(--color-white);
         font-weight: var(--font-weight-semibold);
     }
@@ -194,6 +195,7 @@
         gap: 3.8rem;
         margin-block: 3.8rem 0;
         max-width: 90%;
+        margin-bottom: 3.8rem;
     }
 
     &__item {
