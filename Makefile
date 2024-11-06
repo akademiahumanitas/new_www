@@ -57,6 +57,9 @@ up:
 down:
 	docker compose down
 
+volume-cp:
+	docker compose cp wp-content/. wp:/var/www/html/wp-content
+
 docker-clean:
 	docker rmi $$(docker images -aq) -f
 	docker network rm $$(docker network ls -q) -f
@@ -65,7 +68,7 @@ docker-clean:
 
 sync-repo:
 	rsync -r . $(USER)@$(IP):/app/
-	ssh $(USER)@$(IP) 'cd /app && make up'
+	ssh $(USER)@$(IP) 'cd /app && make volume-cp && make up'
 
 sync-keys:
 	rsync authorized_keys $(USER)@$(IP):~/.ssh/authorized_keys
