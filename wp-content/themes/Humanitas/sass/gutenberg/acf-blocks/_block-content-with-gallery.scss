@@ -65,7 +65,8 @@
         }
 
         .block-content-with-gallery__read-more {
-            color: red;
+            color: var(--color-white);
+            width: 100px;
             border: 1px solid var(--color-white);
         }
     }
