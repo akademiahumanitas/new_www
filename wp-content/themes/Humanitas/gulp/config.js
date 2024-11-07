@@ -39,7 +39,7 @@ module.exports = {
       browser: 'Edge',
       open: true,
       notify: true,
-      // Generate with: mkdir -p /var/www/certs && cd /var/www/certs && mkcert localhost 192.168.x.xxx ::1
+      // Generate with: mkdir -p /var/www/certs && cd /var/www/certs && sudo mkcert localhost 192.168.x.xxx ::1
       https: {
         key: '/var/www/certs/localhost+2-key.pem',
         cert: '/var/www/certs/localhost+2.pem',

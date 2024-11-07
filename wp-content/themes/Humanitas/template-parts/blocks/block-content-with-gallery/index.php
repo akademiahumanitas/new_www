@@ -19,8 +19,8 @@
     $truncated_content = mb_substr($content, 0, $max_chars) . (strlen($content) > $max_chars ? '...' : '');
 
     // Get the button texts from ACF
-    $button_text_read_more = get_field('read_more_hide') ?: 'Read Less';
-    $button_text_read_less = get_field('read_more_show') ?: 'Read More';
+    $button_text_read_more = get_field('read_more_show') ?: 'Read More';
+    $button_text_read_less = get_field('read_more_hide') ?: 'Read Less';
 ?>
 <?php if(!$is_hidden) : ?>
     <section class="block-content-with-gallery block-content-with-gallery--<?= $background_color;?> block-content-with-gallery--<?= $image_position;?>" id="<?= $block_ID; ?>">
