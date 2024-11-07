@@ -59,6 +59,7 @@ down:
 
 volume-cp:
 	docker compose cp wp-content/. wp:/var/www/html/wp-content
+	docker compose exec wp /bin/bash -c 'chown -R www-data:www-data /var/www/html/wp-content'
 
 docker-clean:
 	docker rmi $$(docker images -aq) -f
