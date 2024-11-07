@@ -34,7 +34,9 @@
             --color-paragraph: var(--color-primary);
         }
 
-        .block-content-with-list__title {
+        .block-content-with-list__title,
+        .block-content-with-list__sub-title,
+        .block-content-with-list__description {
             color: var(--color-primary);
         }
 
@@ -75,7 +77,9 @@
             --color-paragraph: var(--color-primary);
         }
 
-        .block-content-with-list__title {
+        .block-content-with-list__title,
+        .block-content-with-list__sub-title,
+        .block-content-with-list__description {
             color: var(--color-primary);
         }
     }
@@ -114,7 +118,8 @@
     &__description {
         margin-bottom: 2.3rem;
         color: var(--color-white);
-        font-weight: var(--font-weight-semibold);
+        font-weight: var(--font-weight-regular);
+        font-size: 1.6rem;
     }
 
     &__text {

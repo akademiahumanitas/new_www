@@ -1,5 +1,4 @@
 <?php
-
     $title = get_field( 'section_title' );
     $content = get_field( 'content' );
     $button = get_field( 'button' );
@@ -21,6 +20,8 @@
     // Get the button texts from ACF
     $button_text_read_more = get_field('read_more_show') ?: 'Read More';
     $button_text_read_less = get_field('read_more_hide') ?: 'Read Less';
+
+    $unique_id = uniqid('block-', true);
 ?>
 <?php if(!$is_hidden) : ?>
     <section class="block-content-with-gallery block-content-with-gallery--<?= $background_color;?> block-content-with-gallery--<?= $image_position;?>" id="<?= $block_ID; ?>">
@@ -42,7 +43,7 @@
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </div>
-                <div class="block-content-with-gallery__content">
+                <div id="<?= $unique_id; ?>" class="block-content-with-gallery__content">
                     <h2 class="block-content-with-gallery__title heading-underline heading-dot fade-in"><?= $title; ?></h3>
                     <div class="block-content-with-gallery__text fade-in">
                         <div class="block-content-with-gallery__text-truncated">
@@ -74,4 +75,29 @@
             <?php get_theme_part('elements/triangle', ['position' => 'bottom-right']); ?>
         <?php endif; ?>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var containerId = <?= json_encode($unique_id); ?>;
+            var container = document.getElementById(containerId);
+            console.log('asd', container);
+            if (container) {
+                const button = container.querySelector('.block-content-with-gallery__read-more');
+                const truncated = container.querySelector('.block-content-with-gallery__text-truncated');
+                const full = container.querySelector('.block-content-with-gallery__text-full');
+
+                button.addEventListener('click', function() {
+                    if (truncated.style.display !== 'none') {
+                        truncated.style.display = 'none';
+                        full.style.display = 'block';
+                        button.textContent = button.getAttribute('data-read-less');
+                    } else {
+                        truncated.style.display = 'block';
+                        full.style.display = 'none';
+                        button.textContent = button.getAttribute('data-read-more');
+                    }
+                });
+            }
+        });
+    </script>
 <?php endif; ?>
