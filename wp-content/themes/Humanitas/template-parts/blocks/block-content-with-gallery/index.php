@@ -19,13 +19,13 @@
 
     $max_chars =  get_field('content_length_for_cut') ?: 400; // Set the maximum number of characters
     // $truncated_content = mb_substr($content, 0, $max_chars) . (strlen($content) > $max_chars ? '...' : '');
-    // $truncated_content = mb_substr($content, 0, $max_chars) . (mb_strlen($content) > $max_chars ? '...' : '');
+    $truncated_content = mb_substr($content, 0, $max_chars) . (mb_strlen($content) > $max_chars ? '...' : '');
 
 	// Usuwamy tagi HTML z zawartości pola WYSIWYG
     $plain_content = wp_strip_all_tags($content);
     
     // Tworzymy skrócony tekst, uwzględniając znaki wielobajtowe
-    $truncated_content = mb_substr($plain_content, 0, $max_chars) . (mb_strlen($plain_content) > $max_chars ? '...' : '');
+    // $truncated_content = mb_substr($plain_content, 0, $max_chars) . (mb_strlen($plain_content) > $max_chars ? '...' : '');
 
     // Get the button texts from ACF
     $button_text_read_more = get_field('read_more_show') ?: 'Read More';
