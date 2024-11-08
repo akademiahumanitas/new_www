@@ -152,19 +152,6 @@
         }
     }
 }
-
-.cell-size-2 {
-    flex: 1 0 50%;
-}
-.cell-size-3 {
-    flex: 1 0 33.3333333%;
-}
-.cell-size-4 {
-    flex: 1 0 25%;
-}
-.cell-size-5 {
-    flex: 1 0 20%;
-}
         
 @container tableContainer (max-width: 1200px) {
     .block-content-with-table__table:after {

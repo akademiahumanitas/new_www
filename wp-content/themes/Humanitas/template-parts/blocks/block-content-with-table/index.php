@@ -10,8 +10,6 @@ $is_hidden = get_field('is_hidden');
 
 $block_ID = $block['id'];
 
-$col_amount = get_field('col_amount');
-$class = "cell-size-{$col_amount}";
 $row_index = 0;
 
 if(str_word_count($title, 0, 'ąćęłńóśźżĄĆĘŁŃÓŚŹŻ') > 1) {
@@ -44,11 +42,11 @@ if(str_word_count($title, 0, 'ąćęłńóśźżĄĆĘŁŃÓŚŹŻ') > 1) {
 						<div class="block-content-with-table__table-row">
 							<?php for ($i = 1; $i <= 5; $i++): ?>
 								<?php if ($i === 1 && $row_index === 0): ?>
-									<div class="block-content-with-table__table-cell <?= esc_attr($class); ?>">
+									<div class="block-content-with-table__table-cell">
 										<?= esc_html($row["col_$i"] ?? ''); ?>
 									</div>
 								<?php elseif (!empty($row["col_$i"])): ?>
-									<div class="block-content-with-table__table-cell <?= esc_attr($class); ?>">
+									<div class="block-content-with-table__table-cell">
 										<?= esc_html($row["col_$i"]); ?>
 									</div>
 								<?php endif; ?>
