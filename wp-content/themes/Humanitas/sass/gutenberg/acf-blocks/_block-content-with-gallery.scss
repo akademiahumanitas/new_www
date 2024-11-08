@@ -30,7 +30,8 @@
             margin-block: 4.8rem;
         }
 
-        .block-content-with-gallery__text {
+        .block-content-with-gallery__text,
+        .block-content-with-gallery__text-truncated  {
             --color-paragraph: var(--color-primary);
             color: var(--color-primary);
         }
@@ -69,6 +70,12 @@
             min-width: 130px;
             border: 1px solid var(--color-white);
         }
+
+        .block-content-with-gallery__text,
+        .block-content-with-gallery__text-truncated  {
+            --color-paragraph: var(--color-white);
+            color: var(--color-white);
+        }
     }
     
     &--light-blue {
@@ -83,7 +90,8 @@
             margin-block: 4.8rem;
         }
 
-        .block-content-with-gallery__text {
+        .block-content-with-gallery__text,
+        .block-content-with-gallery__text-truncated  {
             --color-paragraph: var(--color-primary);
         }
 

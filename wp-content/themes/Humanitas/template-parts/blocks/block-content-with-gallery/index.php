@@ -1,12 +1,15 @@
 <?php
-    $title = get_field( 'section_title' );
-    $content = get_field( 'content' );
-    $button = get_field( 'button' );
-    $gallery = get_field( 'gallery' );
+    $title = get_field('section_title');
+    $content = get_field('content');
+    $button = get_field('button');
+    $gallery = get_field( 'gallery');
+
     $block_ID = $block['id'];
-    $background_color = get_field( 'background_color' );
+    $background_color = get_field('background_color' );
     $image_position = get_field( 'image_position' );
+
     $button_color = $background_color === 'dark-blue' ? 'button-white' : 'button-blue';
+    $toggle_content_length_cutting = get_field('toggle_content_length_cutting');
 
     $is_hidden = get_field('is_hidden');
 
@@ -15,7 +18,14 @@
     }
 
     $max_chars =  get_field('content_length_for_cut') ?: 400; // Set the maximum number of characters
-    $truncated_content = mb_substr($content, 0, $max_chars) . (strlen($content) > $max_chars ? '...' : '');
+    // $truncated_content = mb_substr($content, 0, $max_chars) . (strlen($content) > $max_chars ? '...' : '');
+    // $truncated_content = mb_substr($content, 0, $max_chars) . (mb_strlen($content) > $max_chars ? '...' : '');
+
+	// Usuwamy tagi HTML z zawartości pola WYSIWYG
+    $plain_content = wp_strip_all_tags($content);
+    
+    // Tworzymy skrócony tekst, uwzględniając znaki wielobajtowe
+    $truncated_content = mb_substr($plain_content, 0, $max_chars) . (mb_strlen($plain_content) > $max_chars ? '...' : '');
 
     // Get the button texts from ACF
     $button_text_read_more = get_field('read_more_show') ?: 'Read More';
@@ -46,13 +56,16 @@
                 <div id="<?= $unique_id; ?>" class="block-content-with-gallery__content">
                     <h2 class="block-content-with-gallery__title heading-underline heading-dot fade-in"><?= $title; ?></h3>
                     <div class="block-content-with-gallery__text fade-in">
+ 
+                    <?php if ($toggle_content_length_cutting): ?>
+                        <!-- Wyświetlamy wersję z ucinaniem i przyciskiem -->
                         <div class="block-content-with-gallery__text-truncated">
                             <?= $truncated_content; ?>
                         </div>
                         <div class="block-content-with-gallery__text-full" style="display: none;">
                             <?= $content; ?>
                         </div>
-                        <?php if (strlen($content) > $max_chars): ?>
+                        <?php if (mb_strlen(wp_strip_all_tags($content)) > $max_chars): ?>
                             <button 
                                 class="block-content-with-gallery__read-more"
                                 data-read-more="<?= esc_attr($button_text_read_more); ?>"
@@ -61,6 +74,14 @@
                                 <?= esc_html($button_text_read_more); ?>
                             </button>
                         <?php endif; ?>
+                    <?php else: ?>
+                        <!-- Wyświetlamy pełny tekst bez przycisku -->
+                        <div class="block-content-with-gallery__text-full">
+                            <?= $content; ?>
+                        </div>
+                    <?php endif; ?>
+
+
                     </div>
                     <?php if($button) : ?>
                         <?php get_theme_part('elements/button', [
