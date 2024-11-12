@@ -80,6 +80,7 @@
     
     &--light-blue {
         background-color: var(--color-background-3);
+        color: var(--color-primary);
         margin: 12.8rem 0;
 
         @include lg {
