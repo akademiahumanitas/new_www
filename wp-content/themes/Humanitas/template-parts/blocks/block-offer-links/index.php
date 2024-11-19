@@ -4,7 +4,7 @@ $links = get_field( 'linki' );
 $image = get_field( 'background_image' );
 $block_ID = $block['id'];
 
-if(str_word_count($title, 0, 'ąćęłńóśźżĄĆĘŁŃÓŚŹŻ') > 1) {
+if(str_word_count($title, 0, '!?()[]{}') > 1) {
     $title = preg_replace('/\b([\p{L}]+)$/u','<span class="text-highlight">$1</span>', $title);
 }
 ?>

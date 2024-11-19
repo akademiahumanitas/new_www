@@ -11,7 +11,7 @@ $is_hidden = get_field('is_hidden');
 $sub_title = get_field('sub_title');
 $description = get_field('description');
 
-if($background_color === 'dark-blue' && str_word_count($title, 0, 'ąćęłńóśźżĄĆĘŁŃÓŚŹŻ') > 1) {
+if($background_color === 'dark-blue' && str_word_count($title, 0, 'ąćęłńóśźżĄĆĘŁŃÓŚŹŻ!?()[]{}') > 1) {
     $title = preg_replace('/\b([\p{L}]+)$/u','<span class="text-highlight">$1</span>', $title);
 }
 

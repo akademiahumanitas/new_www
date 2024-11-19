@@ -10,7 +10,7 @@
     $button = get_field('button');
     $image_position = get_field( 'image_position' );
 
-    if($background_color === 'dark-blue' && str_word_count($title, 0, 'ąćęłńóśźżĄĆĘŁŃÓŚŹŻ') > 1) {
+    if($background_color === 'dark-blue' && str_word_count($title, 0, 'ąćęłńóśźżĄĆĘŁŃÓŚŹŻ!?()[]{}') > 1) {
         $title = preg_replace('/\b([\p{L}]+)$/u','<span class="text-highlight">$1</span>', $title);
     }
 ?>

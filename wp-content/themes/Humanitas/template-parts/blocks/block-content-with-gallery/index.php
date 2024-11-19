@@ -14,7 +14,7 @@
     $button_text_read_less = get_field('read_more_hide') ?: 'Read Less';
     $unique_id = uniqid('block-', true);
 
-    if($background_color === 'dark-blue' && str_word_count($title, 0, 'ąćęłńóśźżĄĆĘŁŃÓŚŹŻ') > 1) {
+    if($background_color === 'dark-blue' && str_word_count($title, 0, 'ąćęłńóśźżĄĆĘŁŃÓŚŹŻ!?()[]{}') > 1) {
         $title = preg_replace('/\b([\p{L}]+)$/u','<span class="text-highlight">$1</span>', $title);
     }
 
