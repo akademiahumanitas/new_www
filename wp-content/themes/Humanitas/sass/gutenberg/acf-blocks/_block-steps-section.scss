@@ -18,12 +18,19 @@
     &--dark-blue {
         background-color: var(--color-primary);
         color: var(--color-white);
-        
+
+        .block-steps-section__step-content,
         .block-steps-section__content {
-            p, h1,h2,h3,h4,h5,h6, a {
+            p, h1, h2, h3, h4, h5 ,h6, a, li, span, li::marker {
                 color: var(--color-white);
             }
+
+            li::marker {
+                color: var(--color-yellow);
+                font-weight: 700;
+            }
         }
+        
         .block-steps-section__title {
             color: var(--color-white);
         }
@@ -104,8 +111,15 @@
         }
 
         &-content {
-            color: black;
             font-size: var(--font-size-14);
+
+            p, h1, h2, h3, h4, h5 ,h6, a, li, span, li::marker {
+                color: var(--color-primary);
+            }
+
+            li::marker {
+                font-weight: 700;
+            }
         }
     }
 

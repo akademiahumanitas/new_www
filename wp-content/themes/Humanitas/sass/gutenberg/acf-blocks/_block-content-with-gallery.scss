@@ -157,6 +157,8 @@
         flex-wrap: wrap;
         gap: 2.4rem;
         max-height: 600px;
+        position: sticky;
+        top: calc(var(--header-height) + 2.4rem);
 
         @include xl {
             max-width: 40%;
