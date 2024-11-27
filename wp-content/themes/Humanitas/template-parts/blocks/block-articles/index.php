@@ -72,9 +72,11 @@
 ?>
 
 <section class="block-articles block-articles--<?= $block_style; ?> block-articles--<?= $background_color; ?>" id="<?= $block_ID; ?>">
+
 <?php if($block_style === 'featured' && $background_color === 'light-blue') : ?>
     <?php get_theme_part('elements/triangle', ['position' => 'top-right']); ?>
 <?php endif; ?>
+
     <div class="container">
         <div class="block-articles__header">
             <h2 class="block-articles__title heading-underline fade-in"><?= $title; ?></h2>
@@ -87,25 +89,25 @@
                 <?= $content; ?>
             </div>
         <?php endif; ?>
-                    <?php if($block_style !== 'featured') : ?>
-        <div class="block-articles__slider card-slider fade-in js-delay"
-            <?php if($limit <= 4) : ?>
-                data-slick='{"slidesToShow": <?= $limit; ?>}'
-            <?php endif; ?>
-        >
-            <?php
-            foreach ($articles->posts as $post) :
-                setup_postdata($post);
-            ?>
-                <?php get_theme_part('elements/article-card',[
-                    'post_ID' => $post->ID,
-                    'class' => 'block-articles__slide',
-                    'post_type' => $post_type,
-                ]) ?>
-            <?php
-            endforeach;
-            wp_reset_postdata();
-            ?>
+        <?php if($block_style !== 'featured') : ?>
+            <div class="block-articles__slider card-slider fade-in js-delay"
+                <?php if($limit <= 4) : ?>
+                    data-slick='{"slidesToShow": <?= $limit; ?>}'
+                <?php endif; ?>
+            >
+                <?php
+                foreach ($articles->posts as $post) :
+                    setup_postdata($post);
+                ?>
+                    <?php get_theme_part('elements/article-card',[
+                        'post_ID' => $post->ID,
+                        'class' => 'block-articles__slide',
+                        'post_type' => $post_type,
+                    ]) ?>
+                <?php
+                    endforeach;
+                    wp_reset_postdata();
+                ?>
         </div>
         <?php else : ?>
             <div class="block-articles__grid">
@@ -125,12 +127,12 @@
                             ]) ?>
                         </div>
                         <div class="block-articles__posts">
-                    <?php else : ?>
-                        <?php get_theme_part('elements/article-card',[
-                            'post_ID' => $post->ID,
-                            'class' => 'block-articles__card',
-                            'version' => 'horizontal'
-                        ]) ?>
+                            <?php else : ?>
+                                <?php get_theme_part('elements/article-card',[
+                                    'post_ID' => $post->ID,
+                                    'class' => 'block-articles__card',
+                                    'version' => 'horizontal'
+                                ]) ?>
                     <?php endif; ?>
                 <?php
                 endforeach;

@@ -22,7 +22,13 @@
         aria-label="<?= $title; ?>"
     >
         <figure class="article-card__image">
-            <?= get_image($thumbnail, 'medium'); ?>
+            <?php 
+                if (strpos($class, 'block-articles__featured-card') !== false) {
+                    echo get_image($thumbnail, 'full');
+                } else {
+                    echo get_image($thumbnail, 'medium');
+                }
+            ?>
         </figure>
         <div class="article-card__content">
             <div class="article-card__categories">
