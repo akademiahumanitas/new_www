@@ -84,7 +84,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             var containerId = <?= json_encode($unique_id); ?>;
             var container = document.getElementById(containerId);
-            console.log('asd', container);
+
             if (container) {
                 const button = container.querySelector('.block-content-with-gallery__read-more');
                 const truncated = container.querySelector('.block-content-with-gallery__text-truncated');

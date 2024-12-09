@@ -112,13 +112,11 @@
         display: flex;
         justify-content: space-between;
         gap: 7rem;
-
+        flex-direction: row;
         padding-bottom: 28px;
+        padding-top: 4rem;
 
-        @include xl {
-        }
-
-        @include lg {
+        @include md {
             flex-direction: column;
             gap: 4.8rem;
         }
@@ -165,9 +163,13 @@
             flex: 1 0 40%;
         }
 
-        @include lg {
+        @include md {
             max-width: 100%;
+            max-height: 100%;
+            top: 0;
             margin-bottom: 0;
+            position: relative;
+            overflow: hidden;
         }
     }
 
@@ -206,12 +208,19 @@
     }
 
     &__content {
+        display: flex;
+        flex-direction: column;
         flex: 1;
         align-self: center;
         margin-block: 12rem 16rem;
 
         @include lg {
-            margin-block: 0 7rem;
+            margin-block: 4rem 7rem;
+        }
+
+        @include sm {
+            margin-block: 2rem 7rem;
+            position: relative;
         }
     }
 
