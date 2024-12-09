@@ -33,12 +33,20 @@
         .article-card__image {
             aspect-ratio: 1.29;
             max-width: 19.6rem;
+            min-width: 19.6rem;
             border-bottom-width: 0.8rem;
             margin: 0;
 
             @include sm {
                 aspect-ratio: 1;
                 max-width: 14rem;
+                min-width: 14rem;
+            }
+
+            @include xs {
+                aspect-ratio: 1;
+                max-width: 12rem;
+                min-width: 12rem;
             }
         }
 
