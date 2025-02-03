@@ -1,7 +1,11 @@
 <?php
 namespace Air_Light;
 
-    $main_menu = get_field('main_menu', 'option');
+    $main_menu = get_field('main_navigation', 'option');
+
+    if (empty($main_menu) || !is_array($main_menu)) {
+        $main_menu = [];
+    }
 ?>
 
 <nav class="mega-menu" aria-label="<?php echo esc_html( get_default_localization( 'Main navigation' ) ); ?>">
@@ -12,7 +16,7 @@ namespace Air_Light;
     </button>
     <div class="mega-menu__wrapper">
         <ul class="mega-menu__list">
-            <?php foreach ($main_menu as $first_tier_menu) : 
+            <?php foreach ($main_menu as $first_tier_menu) :
                 $type = $first_tier_menu['type']; // submenu, link
                 $link_title = $first_tier_menu['link_title'];
                 $link = $first_tier_menu['link'];
